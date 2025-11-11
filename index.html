@@ -131,6 +131,85 @@
       }
     }
     </script>
+
+    <!-- Estilos para animaciones -->
+    <style>
+        /* Animaciones CSS para las secciones */
+        .section-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .section-animate.slide-in-left {
+            transform: translateX(-50px);
+        }
+        
+        .section-animate.slide-in-right {
+            transform: translateX(50px);
+        }
+        
+        .section-animate.scale-in {
+            transform: scale(0.95);
+        }
+        
+        .section-animate.visible {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+        
+        /* Animación para elementos individuales */
+        .animate-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .animate-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Animación para el contador */
+        .counter-animate {
+            transition: all 1s ease-out;
+        }
+        
+        /* Animación para timeline */
+        .timeline-item {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Animación para botones */
+        .btn-animate {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-animate:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Animación para imágenes */
+        .img-animate {
+            overflow: hidden;
+        }
+        
+        .img-animate img {
+            transition: transform 0.8s ease;
+        }
+        
+        .img-animate:hover img {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
   <body>
     <!-- Contenedor para transiciones -->
@@ -139,7 +218,9 @@
       <main id="page-content">
         <!-- Header Component -->
         <header-component></header-component>
-        <div class="hero-container">
+        
+        <!-- Hero Section con animación -->
+        <div class="hero-container section-animate slide-in-left">
           <!-- Imagen de fondo -->
           <img src="public/img/home/bg-home.png" alt="Intersteel Background" />
 
@@ -148,12 +229,12 @@
 
           <!-- Texto sobre la imagen -->
           <div class="hero-text">
-            <h1>
+            <h1 class="animate-item">
               H1 Estructuras metálicas<br />
               y fabricación de naves industriales
             </h1>
 
-            <p>
+            <p class="animate-item">
               <span class="highlight"
                 >En INTERSTEEL hacemos realidad tu proyecto industrial.</span
               >
@@ -164,14 +245,14 @@
 
             <a
               href="contacto.html"
-              class="btn btn-border-orange px-4 py-2 d-inline-flex align-items-center"
+              class="btn btn-border-orange px-4 py-2 d-inline-flex align-items-center btn-animate"
             >
               <i class="bi bi-arrow-right me-2"></i> Cotizar
             </a>
           </div>
 
           <!-- Contacto WhatsApp - Esquina superior derecha -->
-          <div class="hero-contact">
+          <div class="hero-contact animate-item">
             <p class="contact-label">
               Chatea con nosotros<br />
               Por WhatsApp
@@ -187,10 +268,11 @@
           </div>
         </div>
 
-        <section class="about-intersteel container-fluid px-0">
+        <!-- About Section con animación -->
+        <section class="about-intersteel container-fluid px-0 section-animate">
           <div class="row g-0">
             <!-- Columna izquierda -->
-            <div class="col-12 col-lg-6 position-relative order-1 order-lg-1">
+            <div class="col-12 col-lg-6 position-relative order-1 order-lg-1 img-animate">
               <img
                 src="public/img/home/img-1.png"
                 alt="Blueprint"
@@ -199,7 +281,7 @@
 
               <!-- Cuadro anaranjado (solo visible en desktop) -->
               <div
-                class="orange-box position-absolute top-50 end-0 translate-middle-y d-none d-lg-block"
+                class="orange-box position-absolute top-50 end-0 translate-middle-y d-none d-lg-block animate-item"
               >
                 <h2 class="mb-3">INTERSTEEL</h2>
                 <p class="mb-4">
@@ -210,7 +292,7 @@
                 </p>
                 <a
                   href="contacto.html"
-                  class="btn btn-dark px-4 py-2 d-inline-flex align-items-center"
+                  class="btn btn-dark px-4 py-2 d-inline-flex align-items-center btn-animate"
                 >
                   <i class="bi bi-arrow-right me-2"></i> Cotizar
                 </a>
@@ -219,7 +301,7 @@
 
             <!-- Cuadro anaranjado (solo visible en mobile) -->
             <div class="col-12 d-lg-none order-2 orange-box-mobile">
-              <div class="orange-box text-center mx-auto">
+              <div class="orange-box text-center mx-auto animate-item">
                 <h2 class="mb-3">INTERSTEEL</h2>
                 <p class="mb-4">
                   En <span class="fw-semibold">INTERSTEEL</span> contamos con
@@ -229,7 +311,7 @@
                 </p>
                 <a
                   href="contacto.html"
-                  class="btn btn-dark px-4 py-2 d-inline-flex align-items-center"
+                  class="btn btn-dark px-4 py-2 d-inline-flex align-items-center btn-animate"
                 >
                   <i class="bi bi-arrow-right me-2"></i> Cotizar
                 </a>
@@ -237,7 +319,7 @@
             </div>
 
             <!-- Columna derecha -->
-            <div class="col-12 col-lg-6 position-relative order-3 order-lg-2">
+            <div class="col-12 col-lg-6 position-relative order-3 order-lg-2 img-animate">
               <img
                 src="public/img/home/img-2.png"
                 alt="Nave industrial"
@@ -247,8 +329,8 @@
           </div>
         </section>
 
-        <!-- SECCIÓN 1: Imagen a todo el ancho -->
-        <section class="fullwidth-image container-fluid px-0">
+        <!-- SECCIÓN 1: Imagen a todo el ancho con animación -->
+        <section class="fullwidth-image container-fluid px-0 section-animate scale-in">
           <img
             src="public/img/home/bg-img-3.png"
             alt="Imagen Intersteel"
@@ -256,11 +338,11 @@
           />
         </section>
 
-        <!-- SECCIÓN 2: Imagen + Texto -->
-        <section class="image-text-section container-fluid px-0">
+        <!-- SECCIÓN 2: Imagen + Texto con animación -->
+        <section class="image-text-section container-fluid px-0 section-animate slide-in-right">
           <div class="row align-items-center g-0">
             <!-- Imagen izquierda -->
-            <div class="col-12 col-lg-8 text-center mb-4 mb-lg-0">
+            <div class="col-12 col-lg-8 text-center mb-4 mb-lg-0 img-animate">
               <img
                 src="public/img/home/bg-img-4.png"
                 alt="Proyecto Intersteel"
@@ -273,7 +355,7 @@
               class="col-12 col-lg-4 d-flex justify-content-center align-items-center"
             >
               <div class="text-content px-4 px-lg-5">
-                <p class="mb-4">
+                <p class="mb-4 animate-item">
                   Desde nuestros inicios, en INTERSTEEL hemos transformado el
                   acero en estructuras que impulsan el desarrollo industrial de
                   cada cliente que ha confiado en nosotros. Con 40 años de
@@ -282,7 +364,7 @@
                 </p>
                 <a
                   href="proyectos.html"
-                  class="btn btn-dark px-4 py-2 d-inline-flex align-items-center"
+                  class="btn btn-dark px-4 py-2 d-inline-flex align-items-center btn-animate"
                 >
                   <i class="bi bi-arrow-right me-2"></i> Ver más
                 </a>
@@ -291,9 +373,10 @@
           </div>
         </section>
 
-        <section class="timeline-section container-fluid py-5">
+        <!-- Timeline Section con animación -->
+        <section class="timeline-section container-fluid py-5 section-animate">
           <div class="container">
-            <h2 class="timeline-title mb-5">Línea del tiempo</h2>
+            <h2 class="timeline-title mb-5 animate-item">Línea del tiempo</h2>
 
             <!-- Contenedor desplazable -->
             <div class="timeline-scroll d-flex flex-nowrap">
@@ -302,7 +385,7 @@
                 <span class="year">2003</span>
                 <h5 class="fw-semibold mt-2">Tem Roy -> Interaceros</h5>
                 <p class="mt-2">
-                  La empresa pasa de llamarse “Tem Roy” a “Interaceros”.
+                  La empresa pasa de llamarse "Tem Roy" a "Interaceros".
                 </p>
               </div>
 
@@ -325,14 +408,14 @@
                 <p class="mt-2">
                   Año clave de innovación y transformación: - Implementación de
                   Acero Sustentable en ciertos proyectos. - Inicio en proyectos
-                  de desmantelación de 2010’s macro fábricas. - Se da el salto
+                  de desmantelación de 2010's macro fábricas. - Se da el salto
                   hacia proyectos de más de 3,000 m2.
                 </p>
               </div>
 
               <!-- Bloque 4 -->
               <div class="timeline-item me-5">
-                <span class="year">2010’s</span>
+                <span class="year">2010's</span>
                 <h5 class="fw-semibold mt-2">Comienzo presencia nacional</h5>
                 <p class="mt-2">
                   Construcción de Área Industrial en Tecate, Baja California,
@@ -372,7 +455,7 @@
                 <span class="year">2022</span>
                 <h5 class="fw-semibold mt-2">Interaceros->INTERSTEEL</h5>
                 <p class="mt-2">
-                  La empresa pasa de llamarse “Interaceros” a “Intersteel”.
+                  La empresa pasa de llamarse "Interaceros" a "Intersteel".
                 </p>
               </div>
 
@@ -391,9 +474,10 @@
           </div>
         </section>
 
-        <section>
+        <!-- Contador Section con animación -->
+        <section class="section-animate scale-in">
           <div class="contador-section">
-            <h2 class="titulo-contador">
+            <h2 class="titulo-contador animate-item">
               Contador de<br />
               <span>metros cuadrados construidos</span>
             </h2>
@@ -404,17 +488,18 @@
               class="imagen-grua"
             />
 
-            <div class="contador-numero">300,000<sup>M2</sup></div>
-            <span class="contador-text"
+            <div class="contador-numero counter-animate">300,000<sup>M2</sup></div>
+            <span class="contador-text animate-item"
               >(Trescientos mil) metros cuadrados</span
             >
           </div>
         </section>
 
-        <section class="projects-map-section container-fluid px-0">
+        <!-- Projects Map Section con animación -->
+        <section class="projects-map-section container-fluid px-0 section-animate">
           <div class="row g-0">
             <!-- Columna izquierda: Mapa -->
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-8 img-animate">
               <img
                 src="public/img/home/mapa.png"
                 alt="Mapa Intersteel"
@@ -427,7 +512,7 @@
               class="col-12 col-lg-4 bg-light-gray d-flex flex-column justify-content-center"
             >
               <div class="cities-box p-4">
-                <h2 class="title mb-4 text-left">
+                <h2 class="title mb-4 text-left animate-item">
                   <span class="text-orange">Ciudades y Estados</span><br />con
                   proyectos
                 </h2>
@@ -435,21 +520,21 @@
                 <!-- Contenedor con scroll -->
                 <div class="cities-list">
                   <ul class="list-unstyled m-0">
-                    <li>San Luis Potosí, San Luis Potosí</li>
-                    <li>Estado de México</li>
-                    <li>Los Reyes La Paz, Estado de México</li>
-                    <li>Naucalpan, Estado de México</li>
-                    <li>Atizapán, Estado de México</li>
-                    <li>Toluca, Estado de México</li>
-                    <li>Atlacomulco, Estado de México</li>
-                    <li>Cuautitlán, Estado de México</li>
-                    <li>Texcoco, Estado de México</li>
-                    <li>Xonacatlán, Estado de México</li>
+                    <li class="animate-item">San Luis Potosí, San Luis Potosí</li>
+                    <li class="animate-item">Estado de México</li>
+                    <li class="animate-item">Los Reyes La Paz, Estado de México</li>
+                    <li class="animate-item">Naucalpan, Estado de México</li>
+                    <li class="animate-item">Atizapán, Estado de México</li>
+                    <li class="animate-item">Toluca, Estado de México</li>
+                    <li class="animate-item">Atlacomulco, Estado de México</li>
+                    <li class="animate-item">Cuautitlán, Estado de México</li>
+                    <li class="animate-item">Texcoco, Estado de México</li>
+                    <li class="animate-item">Xonacatlán, Estado de México</li>
                   </ul>
                 </div>
                 <a
                   href="contacto.html"
-                  class="btn btn-dark px-4 py-2 d-inline-flex align-items-center mt-5"
+                  class="btn btn-dark px-4 py-2 d-inline-flex align-items-center mt-5 btn-animate"
                 >
                   <i class="bi bi-arrow-right me-2"></i> Cotizar
                 </a>
@@ -584,6 +669,88 @@
         if (event.persisted) {
           window.location.reload();
         }
+      });
+
+      // ===================================
+      // ANIMACIONES PARA LAS SECCIONES
+      // ===================================
+      
+      document.addEventListener('DOMContentLoaded', function() {
+          // Configuración del Intersection Observer
+          const observerOptions = {
+              root: null,
+              rootMargin: '0px',
+              threshold: 0.1
+          };
+          
+          // Función para animar elementos individuales con delay
+          function animateItems(container, delay = 100) {
+              const items = container.querySelectorAll('.animate-item');
+              items.forEach((item, index) => {
+                  setTimeout(() => {
+                      item.classList.add('visible');
+                  }, index * delay);
+              });
+          }
+          
+          // Función para animar timeline items
+          function animateTimelineItems(container, delay = 150) {
+              const items = container.querySelectorAll('.timeline-item');
+              items.forEach((item, index) => {
+                  setTimeout(() => {
+                      item.classList.add('visible');
+                  }, index * delay);
+              });
+          }
+          
+          // Función callback para el observer
+          const observerCallback = (entries, observer) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      // Animar la sección principal
+                      entry.target.classList.add('visible');
+                      
+                      // Animar elementos individuales dentro de la sección
+                      if (entry.target.classList.contains('timeline-section')) {
+                          animateTimelineItems(entry.target, 150);
+                      } else {
+                          animateItems(entry.target, 100);
+                      }
+                      
+                      // Animar contador si está en la sección
+                      const counter = entry.target.querySelector('.counter-animate');
+                      if (counter) {
+                          setTimeout(() => {
+                              counter.style.transform = 'scale(1.1)';
+                              setTimeout(() => {
+                                  counter.style.transform = 'scale(1)';
+                              }, 300);
+                          }, 500);
+                      }
+                      
+                      // Dejar de observar después de animar
+                      observer.unobserve(entry.target);
+                  }
+              });
+          };
+          
+          // Crear el observer
+          const observer = new IntersectionObserver(observerCallback, observerOptions);
+          
+          // Observar todas las secciones con animación
+          const animatedSections = document.querySelectorAll('.section-animate');
+          animatedSections.forEach(section => {
+              observer.observe(section);
+          });
+          
+          // Animar elementos del hero inmediatamente
+          const heroSection = document.querySelector('.hero-container');
+          if (heroSection) {
+              setTimeout(() => {
+                  heroSection.classList.add('visible');
+                  animateItems(heroSection, 150);
+              }, 300);
+          }
       });
     </script>
   </body>
