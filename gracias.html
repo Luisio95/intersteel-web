@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gracias</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+    /* Contenedor principal */
+    .thank-you-page {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      background: url('public/img/contacto/gracias.png') center/cover no-repeat;
+    }
+
+    /* Columna izquierda (solo fondo, opcional si quieres un overlay más oscuro) */
+    .left-column {
+      flex: 1;
+      /* Puedes añadir un overlay oscuro si quieres contraste con el texto */
+      /* background: rgba(0,0,0,0.3); */
+    }
+
+    /* Columna derecha (contenido) */
+    .right-column {
+      flex: 1;
+      display: flex;
+      justify-content: center; /* centrado horizontal */
+      align-items: center;     /* centrado vertical */
+      text-align: center;
+      padding: 0 40px;
+    }
+
+    .thank-you-content {
+      max-width: 500px;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .thank-you-content svg {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 20px;
+      color: #dd5d2a;
+    }
+
+    .thank-you-content h1 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .thank-you-content p {
+      font-size: 1rem;
+      margin-bottom: 25px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .thank-you-content button {
+      padding: 10px 25px;
+      font-size: 1rem;
+      border: 2px solid #dd5d2a;
+      background: transparent;
+      color: #dd5d2a;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .thank-you-content button:hover {
+      background: #dd5d2a;
+      color: white;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .thank-you-page {
+        flex-direction: column;
+      }
+
+      .right-column {
+        padding: 20px;
+      }
+
+      .thank-you-content h1 {
+        font-size: 1.3rem;
+      }
+
+      .thank-you-content p {
+        font-size: 0.95rem;
+      }
+
+      .thank-you-content svg {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="thank-you-page">
+    <div class="left-column"></div>
+    <div class="right-column">
+      <div class="thank-you-content">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <h1>Formulario enviado con éxito</h1>
+        <p>Gracias por confiar tu proyecto en nuestras manos. Comenzamos a diseñar la estructura que le dará forma a tus ideas.</p>
+        <button onclick="window.location.href='index.html'">Regresar</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

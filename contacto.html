@@ -222,65 +222,83 @@
                 <!-- Título decorativo -->
                 <h1 class="contact-title">Contacto</h1>
 
+<form 
+  class="contact-form mt-5 mb-4" 
+  action="contacto.php" 
+  method="POST"
+>
+  <!-- Tus inputs normales -->
+  <div class="row g-3">
+    <div class="col-md-6">
+      <input
+        type="text"
+        class="form-control"
+        name="nombre"
+        placeholder="Nombre"
+        required
+      />
+    </div>
+    <div class="col-md-6">
+      <input
+        type="tel"
+        class="form-control"
+        name="telefono"
+        placeholder="Teléfono"
+      />
+    </div>
+    <div class="col-md-6">
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        placeholder="Email"
+        required
+      />
+    </div>
+    <div class="col-md-6">
+      <input
+        type="text"
+        class="form-control"
+        name="empresa"
+        placeholder="Empresa"
+      />
+    </div>
+    <div class="col-md-6">
+      <input
+        type="text"
+        class="form-control"
+        name="ciudad"
+        placeholder="Ciudad"
+      />
+    </div>
+    <div class="col-md-6">
+      <input
+        type="text"
+        class="form-control"
+        name="asunto"
+        placeholder="Asunto"
+      />
+    </div>
+    <div class="col-12">
+      <textarea
+        class="form-control"
+        rows="4"
+        name="mensaje"
+        placeholder="Mensaje"
+        required
+      ></textarea>
+    </div>
+    <div class="col-12 text-end">
+      <button type="submit" class="btn btn-dark px-4 py-2">
+        Enviar
+      </button>
+    </div>
+  </div>
+</form>
+
+
                 <!-- Formulario -->
-                <form class="contact-form mt-5 mb-4">
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Nombre"
-                      />
-                    </div>
-                    <div class="col-md-6">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Teléfono"
-                      />
-                    </div>
-                    <div class="col-md-6">
-                      <input
-                        type="email"
-                        class="form-control"
-                        placeholder="Email"
-                      />
-                    </div>
-                    <div class="col-md-6">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Empresa"
-                      />
-                    </div>
-                    <div class="col-md-6">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Ciudad"
-                      />
-                    </div>
-                    <div class="col-md-6">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Asunto"
-                      />
-                    </div>
-                    <div class="col-12">
-                      <textarea
-                        class="form-control"
-                        rows="4"
-                        placeholder="Mensaje"
-                      ></textarea>
-                    </div>
-                    <div class="col-12 text-end">
-                      <button type="submit" class="btn btn-dark px-4 py-2">
-                        Enviar
-                      </button>
-                    </div>
-                  </div>
-                </form>
+              
 
                 <!-- Información de contacto -->
                 <div class="contact-details mt-4">
