@@ -132,84 +132,6 @@
     }
     </script>
 
-    <!-- Estilos para animaciones -->
-    <style>
-        /* Animaciones CSS para las secciones */
-        .section-animate {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .section-animate.slide-in-left {
-            transform: translateX(-50px);
-        }
-        
-        .section-animate.slide-in-right {
-            transform: translateX(50px);
-        }
-        
-        .section-animate.scale-in {
-            transform: scale(0.95);
-        }
-        
-        .section-animate.visible {
-            opacity: 1;
-            transform: translate(0) scale(1);
-        }
-        
-        /* Animación para elementos individuales */
-        .animate-item {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .animate-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Animación para el contador */
-        .counter-animate {
-            transition: all 1s ease-out;
-        }
-        
-        /* Animación para timeline */
-        .timeline-item {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .timeline-item.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        /* Animación para botones */
-        .btn-animate {
-            transition: all 0.3s ease;
-        }
-        
-        .btn-animate:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        /* Animación para imágenes */
-        .img-animate {
-            overflow: hidden;
-        }
-        
-        .img-animate img {
-            transition: transform 0.8s ease;
-        }
-        
-        .img-animate:hover img {
-            transform: scale(1.05);
-        }
-    </style>
 </head>
   <body>
     <!-- Contenedor para transiciones -->
@@ -269,7 +191,7 @@
         </div>
 
         <!-- About Section con animación -->
-        <section class="about-intersteel container-fluid px-0 section-animate">
+        <section class="about-intersteel container-fluid px-0 section-animate slide-up">
           <div class="row g-0">
             <!-- Columna izquierda -->
             <div class="col-12 col-lg-6 position-relative order-1 order-lg-1 img-animate">

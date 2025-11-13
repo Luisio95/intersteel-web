@@ -171,6 +171,211 @@
         }
       }
     </script>
+
+    <!-- Estilos para animaciones INTERSTEEL – ESTILO FERRO.PT -->
+    <style>
+      /* === ANIMACIONES INTERSTEEL – ESTILO FERRO.PT === */
+
+      /* SECCIONES PRINCIPALES */
+      .section-animate {
+        opacity: 0;
+        transform: translateY(80px);
+        filter: blur(6px);
+        transition:
+          opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+          filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .section-animate.visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      /* VARIANTES */
+      .section-animate.slide-in-left {
+        transform: translateX(-80px);
+      }
+      .section-animate.slide-in-right {
+        transform: translateX(80px);
+      }
+      .section-animate.scale-in {
+        transform: scale(0.92);
+      }
+      .section-animate.slide-up {
+        transform: translateY(100px);
+      }
+
+      .section-animate.slide-in-left.visible,
+      .section-animate.slide-in-right.visible,
+      .section-animate.scale-in.visible,
+      .section-animate.slide-up.visible {
+        transform: translate(0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+      }
+
+      /* ELEMENTOS INTERNOS */
+      .animate-item {
+        opacity: 0;
+        transform: translateY(50px);
+        filter: blur(5px);
+        transition:
+          opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
+          transform 1s cubic-bezier(0.25, 1, 0.5, 1),
+          filter 1s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      .animate-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      /* ELEMENTOS ESCALONADOS (stagger) */
+      .stagger-item {
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(4px);
+        transition:
+          opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+          transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+          filter 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      .stagger-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      /* ELEMENTOS DE SERVICIO */
+      .service-item {
+        opacity: 0;
+        transform: translateY(60px);
+        filter: blur(6px);
+        transition:
+          opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
+          transform 1s cubic-bezier(0.25, 1, 0.5, 1),
+          filter 1s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      .service-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      /* BOTONES */
+      .btn-animate {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-animate:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      }
+
+      /* IMÁGENES */
+      .img-animate {
+        overflow: hidden;
+      }
+      .img-animate img {
+        transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .img-animate:hover img {
+        transform: scale(1.07);
+      }
+
+      /* ANIMACIONES ESPECÍFICAS PARA FORMULARIOS */
+      .form-animate {
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(4px);
+        transition:
+          opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+          transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+          filter 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .form-animate.visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      /* ANIMACIONES PARA DETALLES DE CONTACTO */
+      .contact-detail-item {
+        opacity: 0;
+        transform: translateX(30px);
+        transition:
+          opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+          transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .contact-detail-item.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* HERO ANIMATIONS */
+      .hero-contact {
+        opacity: 0;
+        transform: translateY(-30px);
+        filter: blur(4px);
+        transition:
+          opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s,
+          transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s,
+          filter 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+      }
+
+      .hero-contact.visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      /* TÍTULO DE CONTACTO */
+      .contact-title {
+        opacity: 0;
+        transform: translateY(60px);
+        filter: blur(8px);
+        transition:
+          opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
+          transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
+          filter 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+      }
+
+      .contact-title.visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      /* INPUT ANIMATIONS */
+      .form-control {
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .form-control:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(232, 107, 68, 0.2);
+      }
+
+      /* MAPA ANIMATIONS */
+      .map-animate {
+        opacity: 0;
+        transform: scale(0.95);
+        filter: blur(4px);
+        transition:
+          opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+          filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .map-animate.visible {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+      }
+    </style>
   </head>
   <body>
     <!-- Contenedor para transiciones -->
@@ -179,15 +384,14 @@
       <main id="page-content">
         <!-- Header Component -->
         <header-component></header-component>
-        <div class="hero-container hero-portafolio">
-          <!-- Imagen de fondo -->
-          <!-- <img src="public/img/estructuras/estructuras.png" alt="Intersteel Background" /> -->
-
+        
+        <!-- Hero Section con animación -->
+        <div class="hero-container hero-portafolio section-animate slide-up">
           <!-- Overlay oscuro -->
           <div class="hero-overlay"></div>
 
-          <!-- Contacto WhatsApp - Esquina superior derecha -->
-          <div class="hero-contact hero-portafolio-contact">
+          <!-- Contacto WhatsApp con animación -->
+          <div class="hero-contact hero-portafolio-contact animate-item">
             <p class="contact-label">
               Chatea con nosotros<br />
               Por WhatsApp
@@ -195,7 +399,7 @@
             <a
               href="https://wa.me/524428693588"
               target="_blank"
-              class="contact-phone"
+              class="contact-phone btn-animate"
             >
               <img src="public/img/menu/whatsapp.png" alt="whatsapp" />
               (442) 869 3588
@@ -203,11 +407,12 @@
           </div>
         </div>
 
-        <section class="contact-section container-fluid py-5">
+        <!-- Contact Section con animaciones -->
+        <section class="contact-section container-fluid py-5 section-animate scale-in">
           <div class="container-fluid">
             <div class="row g-0 align-items-stretch">
               <!-- Columna izquierda (imagen) -->
-              <div class="col-12 col-md-6 position-relative">
+              <div class="col-12 col-md-6 position-relative img-animate">
                 <img
                   src="public/img/contacto/contacto.png"
                   alt="Obra Intersteel"
@@ -219,104 +424,100 @@
               <div
                 class="col-12 col-md-6 d-flex flex-column justify-content-center position-relative p-5"
               >
-                <!-- Título decorativo -->
-                <h1 class="contact-title">Contacto</h1>
+                <!-- Título decorativo con animación -->
+                <h1 class="contact-title animate-item">Contacto</h1>
 
-<form 
-  class="contact-form mt-5 mb-4" 
-  action="contacto.php" 
-  method="POST"
->
-  <!-- Tus inputs normales -->
-  <div class="row g-3">
-    <div class="col-md-6">
-      <input
-        type="text"
-        class="form-control"
-        name="nombre"
-        placeholder="Nombre"
-        required
-      />
-    </div>
-    <div class="col-md-6">
-      <input
-        type="tel"
-        class="form-control"
-        name="telefono"
-        placeholder="Teléfono"
-      />
-    </div>
-    <div class="col-md-6">
-      <input
-        type="email"
-        class="form-control"
-        name="email"
-        placeholder="Email"
-        required
-      />
-    </div>
-    <div class="col-md-6">
-      <input
-        type="text"
-        class="form-control"
-        name="empresa"
-        placeholder="Empresa"
-      />
-    </div>
-    <div class="col-md-6">
-      <input
-        type="text"
-        class="form-control"
-        name="ciudad"
-        placeholder="Ciudad"
-      />
-    </div>
-    <div class="col-md-6">
-      <input
-        type="text"
-        class="form-control"
-        name="asunto"
-        placeholder="Asunto"
-      />
-    </div>
-    <div class="col-12">
-      <textarea
-        class="form-control"
-        rows="4"
-        name="mensaje"
-        placeholder="Mensaje"
-        required
-      ></textarea>
-    </div>
-    <div class="col-12 text-end">
-      <button type="submit" class="btn btn-dark px-4 py-2">
-        Enviar
-      </button>
-    </div>
-  </div>
-</form>
+                <!-- Formulario con animaciones escalonadas -->
+                <form
+                  class="contact-form mt-5 mb-4"
+                  action="contacto.php"
+                  method="POST"
+                >
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control form-animate"
+                        name="nombre"
+                        placeholder="Nombre"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="tel"
+                        class="form-control form-animate"
+                        name="telefono"
+                        placeholder="Teléfono"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="email"
+                        class="form-control form-animate"
+                        name="email"
+                        placeholder="Email"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control form-animate"
+                        name="empresa"
+                        placeholder="Empresa"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control form-animate"
+                        name="ciudad"
+                        placeholder="Ciudad"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control form-animate"
+                        name="asunto"
+                        placeholder="Asunto"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <textarea
+                        class="form-control form-animate"
+                        rows="4"
+                        name="mensaje"
+                        placeholder="Mensaje"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="col-12 text-end">
+                      <button type="submit" class="btn btn-dark px-4 py-2 btn-animate">
+                        Enviar
+                      </button>
+                    </div>
+                  </div>
+                </form>
 
-
-                <!-- Formulario -->
-              
-
-                <!-- Información de contacto -->
+                <!-- Información de contacto con animaciones escalonadas -->
                 <div class="contact-details mt-4">
                   <div class="row gy-3">
-                    <div class="col-md-6 d-flex align-items-start gap-2">
+                    <div class="col-md-6 d-flex align-items-start gap-2 contact-detail-item">
                       <i class="bi bi-geo-alt text-secondary fs-5"></i>
                       <p class="mb-0 small text-muted">
                         Cerro Blanco 500, Piso 1, Interior 7,<br />
                         Centro Sur, 76090 Santiago de Querétaro, Qro.
                       </p>
                     </div>
-                    <div class="col-md-6 d-flex align-items-start gap-2">
+                    <div class="col-md-6 d-flex align-items-start gap-2 contact-detail-item">
                       <i class="bi bi-envelope text-secondary fs-5"></i>
                       <p class="mb-0 small text-muted">
                         contacto@intersteelmx.com
                       </p>
                     </div>
-                    <div class="col-md-6 d-flex align-items-start gap-2">
+                    <div class="col-md-6 d-flex align-items-start gap-2 contact-detail-item">
                       <i class="bi bi-telephone text-secondary fs-5"></i>
                       <p class="mb-0 small text-muted">(442) 869 3588</p>
                     </div>
@@ -327,45 +528,48 @@
           </div>
         </section>
 
-        <section class="projects-map-section container-fluid px-0">
+        <!-- Projects Map Section con animaciones -->
+        <section class="projects-map-section container-fluid px-0 section-animate slide-in-right">
           <div class="row g-0">
-            <!-- Columna izquierda: Mapa -->
+            <!-- Columna izquierda: Mapa con animación -->
             <div class="col-12 col-lg-8">
-              <img
-                src="public/img/home/mapa.png"
-                alt="Mapa Intersteel"
-                class="img-fluid w-100 h-100 object-fit-cover"
-              />
+              <div class="map-animate img-animate">
+                <img
+                  src="public/img/home/mapa.png"
+                  alt="Mapa Intersteel"
+                  class="img-fluid w-100 h-100 object-fit-cover"
+                />
+              </div>
             </div>
 
-            <!-- Columna derecha: Ciudades -->
+            <!-- Columna derecha: Ciudades con animaciones -->
             <div
               class="col-12 col-lg-4 bg-light-gray d-flex flex-column justify-content-center"
             >
               <div class="cities-box p-4">
-                <h2 class="title mb-4 text-left">
+                <h2 class="title mb-4 text-left animate-item">
                   <span class="text-orange">Ciudades y Estados</span><br />con
                   proyectos
                 </h2>
 
-                <!-- Contenedor con scroll -->
+                <!-- Contenedor con scroll y animaciones escalonadas -->
                 <div class="cities-list">
                   <ul class="list-unstyled m-0">
-                    <li>San Luis Potosí, San Luis Potosí</li>
-                    <li>Estado de México</li>
-                    <li>Los Reyes La Paz, Estado de México</li>
-                    <li>Naucalpan, Estado de México</li>
-                    <li>Atizapán, Estado de México</li>
-                    <li>Toluca, Estado de México</li>
-                    <li>Atlacomulco, Estado de México</li>
-                    <li>Cuautitlán, Estado de México</li>
-                    <li>Texcoco, Estado de México</li>
-                    <li>Xonacatlán, Estado de México</li>
+                    <li class="stagger-item">San Luis Potosí, San Luis Potosí</li>
+                    <li class="stagger-item">Estado de México</li>
+                    <li class="stagger-item">Los Reyes La Paz, Estado de México</li>
+                    <li class="stagger-item">Naucalpan, Estado de México</li>
+                    <li class="stagger-item">Atizapán, Estado de México</li>
+                    <li class="stagger-item">Toluca, Estado de México</li>
+                    <li class="stagger-item">Atlacomulco, Estado de México</li>
+                    <li class="stagger-item">Cuautitlán, Estado de México</li>
+                    <li class="stagger-item">Texcoco, Estado de México</li>
+                    <li class="stagger-item">Xonacatlán, Estado de México</li>
                   </ul>
                 </div>
                 <a
                   href="contacto.html"
-                  class="btn btn-dark px-4 py-2 d-inline-flex align-items-center mt-5"
+                  class="btn btn-dark px-4 py-2 d-inline-flex align-items-center mt-5 btn-animate animate-item"
                 >
                   <i class="bi bi-arrow-right me-2"></i> Cotizar
                 </a>
@@ -373,6 +577,7 @@
             </div>
           </div>
         </section>
+        
         <!-- footer -->
         <footer-component></footer-component>
       </main>
@@ -495,6 +700,147 @@
         if (event.persisted) {
           window.location.reload();
         }
+      });
+
+      // ===================================
+      // SISTEMA DE ANIMACIONES INTERSTEEL PARA CONTACTO
+      // ===================================
+
+      document.addEventListener('DOMContentLoaded', function() {
+        // Configuración del Intersection Observer
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px 0px -10% 0px',
+          threshold: 0.1
+        };
+
+        // Función para animar elementos con delay escalonado
+        function animateStaggerItems(container, delay = 100) {
+          const items = container.querySelectorAll('.stagger-item');
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('visible');
+            }, index * delay);
+          });
+        }
+
+        // Función para animar formulario con delay escalonado
+        function animateFormItems(container, delay = 80) {
+          const items = container.querySelectorAll('.form-animate');
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('visible');
+            }, index * delay);
+          });
+        }
+
+        // Función para animar detalles de contacto
+        function animateContactDetails(container, delay = 120) {
+          const items = container.querySelectorAll('.contact-detail-item');
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('visible');
+            }, index * delay);
+          });
+        }
+
+        // Función callback para el observer
+        const observerCallback = (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Animar la sección principal
+              entry.target.classList.add('visible');
+              
+              // Animar elementos individuales dentro de la sección
+              const animateItems = entry.target.querySelectorAll('.animate-item');
+              animateItems.forEach((item, index) => {
+                setTimeout(() => {
+                  item.classList.add('visible');
+                }, index * 100);
+              });
+
+              // Animaciones específicas por tipo de sección
+              if (entry.target.classList.contains('contact-section')) {
+                // Animar título de contacto
+                const contactTitle = entry.target.querySelector('.contact-title');
+                if (contactTitle) {
+                  setTimeout(() => {
+                    contactTitle.classList.add('visible');
+                  }, 300);
+                }
+
+                // Animar formulario
+                const contactForm = entry.target.querySelector('.contact-form');
+                if (contactForm) {
+                  setTimeout(() => {
+                    animateFormItems(contactForm, 80);
+                  }, 500);
+                }
+
+                // Animar detalles de contacto
+                const contactDetails = entry.target.querySelector('.contact-details');
+                if (contactDetails) {
+                  setTimeout(() => {
+                    animateContactDetails(contactDetails, 120);
+                  }, 800);
+                }
+              }
+              
+              if (entry.target.classList.contains('projects-map-section')) {
+                // Animar mapa
+                const map = entry.target.querySelector('.map-animate');
+                if (map) {
+                  setTimeout(() => {
+                    map.classList.add('visible');
+                  }, 300);
+                }
+
+                // Animar lista de ciudades
+                const citiesList = entry.target.querySelector('.cities-list');
+                if (citiesList) {
+                  setTimeout(() => {
+                    animateStaggerItems(citiesList, 100);
+                  }, 500);
+                }
+              }
+
+              // Dejar de observar después de animar
+              observer.unobserve(entry.target);
+            }
+          });
+        };
+
+        // Crear el observer
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // Observar todas las secciones con animación
+        const animatedSections = document.querySelectorAll('.section-animate');
+        animatedSections.forEach(section => {
+          observer.observe(section);
+        });
+
+        // Observar elementos individuales fuera de secciones
+        const individualAnimatedItems = document.querySelectorAll('.animate-item:not(.section-animate .animate-item)');
+        individualAnimatedItems.forEach(item => {
+          observer.observe(item);
+        });
+
+        // Animar elementos del hero inmediatamente
+        const heroContact = document.querySelector('.hero-contact');
+        if (heroContact) {
+          setTimeout(() => {
+            heroContact.classList.add('visible');
+          }, 800);
+        }
+
+        // Animar header después de la transición de página
+        setTimeout(() => {
+          const header = document.querySelector('header-component');
+          if (header) {
+            header.style.opacity = '1';
+            header.style.transform = 'translateY(0)';
+          }
+        }, 600);
       });
     </script>
   </body>

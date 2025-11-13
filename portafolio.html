@@ -171,6 +171,256 @@
         }
       }
     </script>
+
+    <!-- Estilos para animaciones INTERSTEEL – ESTILO FERRO.PT -->
+    <style>
+      /* === ANIMACIONES INTERSTEEL – ESTILO FERRO.PT === */
+
+      /* SECCIONES PRINCIPALES */
+      .section-animate {
+        opacity: 0;
+        transform: translateY(80px);
+        filter: blur(6px);
+        transition:
+          opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+          filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .section-animate.visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      /* VARIANTES */
+      .section-animate.slide-in-left {
+        transform: translateX(-80px);
+      }
+      .section-animate.slide-in-right {
+        transform: translateX(80px);
+      }
+      .section-animate.scale-in {
+        transform: scale(0.92);
+      }
+      .section-animate.slide-up {
+        transform: translateY(100px);
+      }
+
+      .section-animate.slide-in-left.visible,
+      .section-animate.slide-in-right.visible,
+      .section-animate.scale-in.visible,
+      .section-animate.slide-up.visible {
+        transform: translate(0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+      }
+
+      /* ELEMENTOS INTERNOS */
+      .animate-item {
+        opacity: 0;
+        transform: translateY(50px);
+        filter: blur(5px);
+        transition:
+          opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
+          transform 1s cubic-bezier(0.25, 1, 0.5, 1),
+          filter 1s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      .animate-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      /* ELEMENTOS ESCALONADOS (stagger) */
+      .stagger-item {
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(4px);
+        transition:
+          opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+          transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+          filter 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      .stagger-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      /* ELEMENTOS DE SERVICIO */
+      .service-item {
+        opacity: 0;
+        transform: translateY(60px);
+        filter: blur(6px);
+        transition:
+          opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
+          transform 1s cubic-bezier(0.25, 1, 0.5, 1),
+          filter 1s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      .service-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      /* BOTONES */
+      .btn-animate {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-animate:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      }
+
+      /* IMÁGENES */
+      .img-animate {
+        overflow: hidden;
+      }
+      .img-animate img {
+        transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .img-animate:hover img {
+        transform: scale(1.07);
+      }
+
+      /* ANIMACIONES ESPECÍFICAS PARA GALERÍA */
+      .galeria-item {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+        filter: blur(5px);
+        transition:
+          opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+          filter 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .galeria-item.visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+
+      .galeria-info {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.3s,
+          transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.3s;
+      }
+
+      .galeria-item.visible .galeria-info {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* HERO ANIMATIONS */
+      .hero-contact {
+        opacity: 0;
+        transform: translateY(-30px);
+        filter: blur(4px);
+        transition:
+          opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s,
+          transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s,
+          filter 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+      }
+
+      .hero-contact.visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      /* LIGHTBOX STYLES */
+      .lightbox-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .lightbox-overlay.active {
+        display: flex;
+        opacity: 1;
+      }
+
+      .lightbox-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      .lightbox-image {
+        max-width: 100%;
+        max-height: 80vh;
+        object-fit: contain;
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 10000;
+      }
+
+      .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .lightbox-prev {
+        left: 20px;
+      }
+
+      .lightbox-next {
+        right: 20px;
+      }
+
+      .lightbox-counter {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        font-size: 1rem;
+      }
+
+      .lightbox-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 20px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .lightbox-overlay.active .lightbox-info {
+        transform: translateY(0);
+      }
+    </style>
   </head>
   <body>
     <!-- Contenedor para transiciones -->
@@ -179,15 +429,14 @@
       <main id="page-content">
         <!-- Header Component -->
         <header-component></header-component>
-        <div class="hero-container hero-portafolio">
-          <!-- Imagen de fondo -->
-          <!-- <img src="public/img/estructuras/estructuras.png" alt="Intersteel Background" /> -->
-
+        
+        <!-- Hero Section con animación -->
+        <div class="hero-container hero-portafolio section-animate slide-up">
           <!-- Overlay oscuro -->
           <div class="hero-overlay"></div>
 
-          <!-- Contacto WhatsApp - Esquina superior derecha -->
-          <div class="hero-contact hero-portafolio-contact">
+          <!-- Contacto WhatsApp con animación -->
+          <div class="hero-contact hero-portafolio-contact animate-item">
             <p class="contact-label">
               Chatea con nosotros<br />
               Por WhatsApp
@@ -195,7 +444,7 @@
             <a
               href="https://wa.me/524428693588"
               target="_blank"
-              class="contact-phone"
+              class="contact-phone btn-animate"
             >
               <img src="public/img/menu/whatsapp.png" alt="whatsapp" />
               (442) 869 3588
@@ -203,13 +452,13 @@
           </div>
         </div>
 
-        <!-- Galería Slider Component -->
-        <section class="galeria-section" style="padding: 0%">
+        <!-- Galería Section con animaciones -->
+        <section class="galeria-section section-animate scale-in" style="padding: 0%">
           <div class="container-fluid">
             <div class="row" style="padding: 0%">
               <!-- Imagen 1 -->
               <div class="col-12 col-md-6" style="padding: 0%">
-                <div class="galeria-item position-relative">
+                <div class="galeria-item position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-1.jpg"
                     alt="Proyecto 1"
@@ -236,7 +485,7 @@
 
               <!-- Imagen 2 -->
               <div class="col-12 col-md-6" style="padding: 0%">
-                <div class="galeria-item position-relative">
+                <div class="galeria-item position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-2.jpg"
                     alt="Proyecto 2"
@@ -261,11 +510,12 @@
                 </div>
               </div>
 
+              <!-- Imagen 3 -->
               <div class="col-12 col-md-4" style="padding: 0%">
-                <div class="galeria-item position-relative">
+                <div class="galeria-item position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-3.jpg"
-                    alt="Proyecto 2"
+                    alt="Proyecto 3"
                     class="img-fluid w-100"
                   />
                   <div
@@ -287,11 +537,12 @@
                 </div>
               </div>
 
+              <!-- Imagen 4 -->
               <div class="col-12 col-md-4" style="padding: 0%">
-                <div class="galeria-item position-relative">
+                <div class="galeria-item position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-4.jpg"
-                    alt="Proyecto 2"
+                    alt="Proyecto 4"
                     class="img-fluid w-100"
                   />
                   <div
@@ -313,11 +564,12 @@
                 </div>
               </div>
 
+              <!-- Imagen 5 -->
               <div class="col-12 col-md-4" style="padding: 0%">
-                <div class="galeria-item position-relative">
+                <div class="galeria-item position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-5.jpg"
-                    alt="Proyecto 2"
+                    alt="Proyecto 5"
                     class="img-fluid w-100"
                   />
                   <div
@@ -339,11 +591,12 @@
                 </div>
               </div>
 
+              <!-- Imagen 6 -->
               <div class="col-12 col-md-12" style="padding: 0%">
-                <div class="galeria-item position-relative">
+                <div class="galeria-item position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-6.jpg"
-                    alt="Proyecto 2"
+                    alt="Proyecto 6"
                     class="img-fluid w-100"
                   />
                   <div
@@ -365,11 +618,12 @@
                 </div>
               </div>
 
+              <!-- Imagen 7 -->
               <div class="col-12 col-md-6" style="padding: 0%">
-                <div class="galeria-item position-relative">
+                <div class="galeria-item position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-7.jpg"
-                    alt="Proyecto 1"
+                    alt="Proyecto 7"
                     class="img-fluid w-100"
                   />
                   <div
@@ -391,12 +645,12 @@
                 </div>
               </div>
 
-              <!-- Imagen 2 -->
+              <!-- Imagen 8 -->
               <div class="col-12 col-md-6" style="padding: 0%">
-                <div class="galeria-item position-relative">
+                <div class="galeria-item position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-8.jpg"
-                    alt="Proyecto 2"
+                    alt="Proyecto 8"
                     class="img-fluid w-100"
                   />
                   <div
@@ -418,11 +672,12 @@
                 </div>
               </div>
 
+              <!-- Imagen 9 -->
               <div class="col-12 col-md-4" style="padding: 0%">
-                <div class="galeria-item position-relative">
+                <div class="galeria-item position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-9.jpg"
-                    alt="Proyecto 2"
+                    alt="Proyecto 9"
                     class="img-fluid w-100"
                   />
                   <div
@@ -444,11 +699,12 @@
                 </div>
               </div>
 
+              <!-- Imagen 10 -->
               <div class="col-12 col-md-4" style="padding: 0%">
-                <div class="galeria-item position-relative">
+                <div class="galeria-item position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-10.jpg"
-                    alt="Proyecto 2"
+                    alt="Proyecto 10"
                     class="img-fluid w-100"
                   />
                   <div
@@ -470,11 +726,12 @@
                 </div>
               </div>
 
+              <!-- Imagen 11 -->
               <div class="col-12 col-md-4" style="padding: 0%">
-                <div class="galeria-item position-relative">
+                <div class="galeria-item position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-11.jpg"
-                    alt="Proyecto 2"
+                    alt="Proyecto 11"
                     class="img-fluid w-100"
                   />
                   <div
@@ -496,11 +753,12 @@
                 </div>
               </div>
 
+              <!-- Imagen 12 -->
               <div class="col-12 col-md-12" style="padding: 0%">
-                <div class="galeria-item position-relative">
+                <div class="galeria-item position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-12.jpg"
-                    alt="Proyecto 2"
+                    alt="Proyecto 12"
                     class="img-fluid w-100"
                   />
                   <div
@@ -650,169 +908,264 @@
       });
 
       // ===================================
-// LIGHTBOX / IMAGE PREVIEW
-// ===================================
+      // SISTEMA DE ANIMACIONES INTERSTEEL
+      // ===================================
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Crear estructura del lightbox
-  const lightboxHTML = `
-    <div class="lightbox-overlay" id="lightbox">
-      <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">
-        <i class="bi bi-x"></i>
-      </button>
-      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Anterior">
-        <i class="bi bi-chevron-left"></i>
-      </button>
-      <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Siguiente">
-        <i class="bi bi-chevron-right"></i>
-      </button>
-      <div class="lightbox-counter" id="lightboxCounter"></div>
-      <div class="lightbox-content">
-        <img src="" alt="" class="lightbox-image" id="lightboxImage">
-        <div class="lightbox-info" id="lightboxInfo"></div>
-      </div>
-    </div>
-  `;
+      document.addEventListener('DOMContentLoaded', function() {
+        // Configuración del Intersection Observer
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px 0px -10% 0px',
+          threshold: 0.1
+        };
 
-  // Insertar lightbox en el body
-  document.body.insertAdjacentHTML('beforeend', lightboxHTML);
+        // Función para animar elementos con delay escalonado
+        function animateStaggerItems(container, delay = 100) {
+          const items = container.querySelectorAll('.stagger-item');
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('visible');
+            }, index * delay);
+          });
+        }
 
-  // Elementos del lightbox
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImage = document.getElementById('lightboxImage');
-  const lightboxInfo = document.getElementById('lightboxInfo');
-  const lightboxCounter = document.getElementById('lightboxCounter');
-  const lightboxClose = document.getElementById('lightboxClose');
-  const lightboxPrev = document.getElementById('lightboxPrev');
-  const lightboxNext = document.getElementById('lightboxNext');
+        // Función para animar galería con delay escalonado
+        function animateGalleryItems(container, delay = 150) {
+          const items = container.querySelectorAll('.galeria-item');
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('visible');
+            }, index * delay);
+          });
+        }
 
-  // Obtener todas las imágenes de la galería
-  const galeriaItems = document.querySelectorAll('.galeria-item');
-  let currentIndex = 0;
-  let images = [];
+        // Función callback para el observer
+        const observerCallback = (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Animar la sección principal
+              entry.target.classList.add('visible');
+              
+              // Animar elementos individuales dentro de la sección
+              const animateItems = entry.target.querySelectorAll('.animate-item');
+              animateItems.forEach((item, index) => {
+                setTimeout(() => {
+                  item.classList.add('visible');
+                }, index * 100);
+              });
 
-  // Recopilar información de las imágenes
-  galeriaItems.forEach((item, index) => {
-    const img = item.querySelector('img');
-    const title = item.querySelector('.galeria-texto-izquierda h5')?.textContent || '';
-    const description = item.querySelector('.galeria-texto-izquierda small')?.textContent || '';
-    const location = item.querySelector('.galeria-texto-derecha small')?.textContent || '';
+              // Animaciones específicas por tipo de sección
+              if (entry.target.classList.contains('galeria-section')) {
+                animateGalleryItems(entry.target, 120);
+              }
+              
+              if (entry.target.classList.contains('service-section')) {
+                animateStaggerItems(entry.target, 150);
+              }
 
-    images.push({
-      src: img.src,
-      alt: img.alt,
-      title: title,
-      description: description,
-      location: location
-    });
+              // Dejar de observar después de animar
+              observer.unobserve(entry.target);
+            }
+          });
+        };
 
-    // Agregar evento click a cada item
-    item.addEventListener('click', function(e) {
-      // Evitar que se abra si se hace click en un enlace
-      if (e.target.tagName === 'A') return;
-      
-      currentIndex = index;
-      openLightbox();
-    });
-  });
+        // Crear el observer
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-  // Función para abrir el lightbox
-  function openLightbox() {
-    updateLightboxContent();
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+        // Observar todas las secciones con animación
+        const animatedSections = document.querySelectorAll('.section-animate');
+        animatedSections.forEach(section => {
+          observer.observe(section);
+        });
 
-  // Función para cerrar el lightbox
-  function closeLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-  }
+        // Observar elementos individuales fuera de secciones
+        const individualAnimatedItems = document.querySelectorAll('.animate-item:not(.section-animate .animate-item)');
+        individualAnimatedItems.forEach(item => {
+          observer.observe(item);
+        });
 
-  // Función para actualizar el contenido del lightbox
-  function updateLightboxContent() {
-    const image = images[currentIndex];
-    
-    lightboxImage.src = image.src;
-    lightboxImage.alt = image.alt;
-    
-    lightboxInfo.innerHTML = `
-      <h3>${image.title}</h3>
-      <p>${image.description}</p>
-      <span class="location">${image.location}</span>
-    `;
-    
-    lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
-  }
+        // Animar elementos del hero inmediatamente
+        const heroContact = document.querySelector('.hero-contact');
+        if (heroContact) {
+          setTimeout(() => {
+            heroContact.classList.add('visible');
+          }, 800);
+        }
 
-  // Función para ir a la imagen anterior
-  function prevImage() {
-    currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
-    updateLightboxContent();
-  }
+        // Animar header después de la transición de página
+        setTimeout(() => {
+          const header = document.querySelector('header-component');
+          if (header) {
+            header.style.opacity = '1';
+            header.style.transform = 'translateY(0)';
+          }
+        }, 600);
+      });
 
-  // Función para ir a la siguiente imagen
-  function nextImage() {
-    currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
-    updateLightboxContent();
-  }
+      // ===================================
+      // LIGHTBOX / IMAGE PREVIEW
+      // ===================================
 
-  // Event Listeners
-  lightboxClose.addEventListener('click', closeLightbox);
-  lightboxPrev.addEventListener('click', prevImage);
-  lightboxNext.addEventListener('click', nextImage);
+      document.addEventListener('DOMContentLoaded', function() {
+        // Crear estructura del lightbox
+        const lightboxHTML = `
+          <div class="lightbox-overlay" id="lightbox">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">
+              <i class="bi bi-x"></i>
+            </button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Anterior">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Siguiente">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="lightbox-counter" id="lightboxCounter"></div>
+            <div class="lightbox-content">
+              <img src="" alt="" class="lightbox-image" id="lightboxImage">
+              <div class="lightbox-info" id="lightboxInfo"></div>
+            </div>
+          </div>
+        `;
 
-  // Cerrar al hacer click en el overlay (pero no en la imagen)
-  lightbox.addEventListener('click', function(e) {
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
-  });
+        // Insertar lightbox en el body
+        document.body.insertAdjacentHTML('beforeend', lightboxHTML);
 
-  // Navegación con teclado
-  document.addEventListener('keydown', function(e) {
-    if (!lightbox.classList.contains('active')) return;
+        // Elementos del lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxInfo = document.getElementById('lightboxInfo');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
 
-    switch(e.key) {
-      case 'Escape':
-        closeLightbox();
-        break;
-      case 'ArrowLeft':
-        prevImage();
-        break;
-      case 'ArrowRight':
-        nextImage();
-        break;
-    }
-  });
+        // Obtener todas las imágenes de la galería
+        const galeriaItems = document.querySelectorAll('.galeria-item');
+        let currentIndex = 0;
+        let images = [];
 
-  // Swipe en móviles
-  let touchStartX = 0;
-  let touchEndX = 0;
+        // Recopilar información de las imágenes
+        galeriaItems.forEach((item, index) => {
+          const img = item.querySelector('img');
+          const title = item.querySelector('.galeria-texto-izquierda h5')?.textContent || '';
+          const description = item.querySelector('.galeria-texto-izquierda small')?.textContent || '';
+          const location = item.querySelector('.galeria-texto-derecha small')?.textContent || '';
 
-  lightbox.addEventListener('touchstart', function(e) {
-    touchStartX = e.changedTouches[0].screenX;
-  });
+          images.push({
+            src: img.src,
+            alt: img.alt,
+            title: title,
+            description: description,
+            location: location
+          });
 
-  lightbox.addEventListener('touchend', function(e) {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  });
+          // Agregar evento click a cada item
+          item.addEventListener('click', function(e) {
+            // Evitar que se abra si se hace click en un enlace
+            if (e.target.tagName === 'A') return;
+            
+            currentIndex = index;
+            openLightbox();
+          });
+        });
 
-  function handleSwipe() {
-    const swipeThreshold = 50;
-    
-    if (touchEndX < touchStartX - swipeThreshold) {
-      // Swipe left - siguiente imagen
-      nextImage();
-    }
-    
-    if (touchEndX > touchStartX + swipeThreshold) {
-      // Swipe right - imagen anterior
-      prevImage();
-    }
-  }
-});
+        // Función para abrir el lightbox
+        function openLightbox() {
+          updateLightboxContent();
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+
+        // Función para cerrar el lightbox
+        function closeLightbox() {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+
+        // Función para actualizar el contenido del lightbox
+        function updateLightboxContent() {
+          const image = images[currentIndex];
+          
+          lightboxImage.src = image.src;
+          lightboxImage.alt = image.alt;
+          
+          lightboxInfo.innerHTML = `
+            <h3>${image.title}</h3>
+            <p>${image.description}</p>
+            <span class="location">${image.location}</span>
+          `;
+          
+          lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+        }
+
+        // Función para ir a la imagen anterior
+        function prevImage() {
+          currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+          updateLightboxContent();
+        }
+
+        // Función para ir a la siguiente imagen
+        function nextImage() {
+          currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+          updateLightboxContent();
+        }
+
+        // Event Listeners
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', prevImage);
+        lightboxNext.addEventListener('click', nextImage);
+
+        // Cerrar al hacer click en el overlay (pero no en la imagen)
+        lightbox.addEventListener('click', function(e) {
+          if (e.target === lightbox) {
+            closeLightbox();
+          }
+        });
+
+        // Navegación con teclado
+        document.addEventListener('keydown', function(e) {
+          if (!lightbox.classList.contains('active')) return;
+
+          switch(e.key) {
+            case 'Escape':
+              closeLightbox();
+              break;
+            case 'ArrowLeft':
+              prevImage();
+              break;
+            case 'ArrowRight':
+              nextImage();
+              break;
+          }
+        });
+
+        // Swipe en móviles
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        lightbox.addEventListener('touchstart', function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+        });
+
+        lightbox.addEventListener('touchend', function(e) {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        });
+
+        function handleSwipe() {
+          const swipeThreshold = 50;
+          
+          if (touchEndX < touchStartX - swipeThreshold) {
+            // Swipe left - siguiente imagen
+            nextImage();
+          }
+          
+          if (touchEndX > touchStartX + swipeThreshold) {
+            // Swipe right - imagen anterior
+            prevImage();
+          }
+        }
+      });
     </script>
   </body>
 </html>
