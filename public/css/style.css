@@ -1,12 +1,31 @@
+/* ============================================
+   FUENTES PERSONALIZADAS
+   ============================================ */
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../../fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../../fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   background-color: #e4e2e2;
   font-family: "Poppins", sans-serif;
   color: #111;
   margin: 0;
   overflow-x: hidden;
+  font-weight: 400;
 }
-
-
 
 /* ===================================
    TRANSICIONES ENTRE PÁGINAS
@@ -142,7 +161,9 @@ body {
   align-self: flex-start;
   opacity: 0;
   transform: translateY(0px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .offcanvas-menu.active .logo {
@@ -169,7 +190,9 @@ body {
   margin-bottom: 1rem;
   opacity: 0;
   transform: translateX(-30px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 /* Animación escalonada de los items del menú */
@@ -214,7 +237,7 @@ body {
 }
 
 .menu a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -249,7 +272,9 @@ body {
   padding-left: 0; /* Sin padding adicional */
   opacity: 0;
   transform: translateX(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .offcanvas-menu.active .right-content {
@@ -311,6 +336,7 @@ body {
   border: none;
   outline: none;
   transition: transform 0.3s ease;
+  /* margin-right: 3%; */
 }
 
 .navbar-toggler:hover {
@@ -324,7 +350,9 @@ body {
 /* Botón de cierre */
 .btn-close {
   opacity: 0.8;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   top: 1rem;
   right: 2rem;
 }
@@ -364,7 +392,7 @@ body {
     padding: 1.5rem;
     padding-right: 1.5rem;
     flex: none;
-    height: 50%!important;
+    height: 50% !important;
   }
 
   .logo {
@@ -395,7 +423,7 @@ body {
     padding: 0rem;
     /* padding-left: 1rem; */
     flex: none;
-    height: 50%!important;
+    height: 50% !important;
   }
 
   .crane-image {
@@ -505,7 +533,6 @@ body.loaded #page-content {
 }
 
 /* Overlay oscuro sobre la imagen */
-
 
 /* Contenido sobre la imagen */
 .hero-content {
@@ -690,7 +717,11 @@ body.loaded #page-content {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
   40% {
@@ -709,11 +740,11 @@ body.loaded #page-content {
   .hero-title {
     font-size: 3rem;
   }
-  
+
   .hero-text {
     padding-left: 1.5rem;
   }
-  
+
   .services-cards {
     padding-right: 2rem;
   }
@@ -723,21 +754,21 @@ body.loaded #page-content {
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .hero-description {
     font-size: 0.95rem;
   }
-  
+
   .hero-text {
     padding-left: 1rem;
     max-width: 100%;
   }
-  
+
   .hero-contact {
     top: 80px;
     right: 1.5rem;
   }
-  
+
   .hero-scroll-btn {
     width: 50px;
     height: 50px;
@@ -750,41 +781,41 @@ body.loaded #page-content {
   .hero-section {
     min-height: 500px;
   }
-  
+
   .hero-content {
     padding: 80px 0 60px;
   }
-  
+
   .hero-title {
     font-size: 2rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .hero-description {
     font-size: 0.9rem;
     margin-bottom: 2rem;
   }
-  
+
   .hero-text {
     padding-left: 0;
   }
-  
+
   .btn-cotizar {
     padding: 10px 25px;
     font-size: 0.9rem;
   }
-  
+
   .hero-contact {
     position: static;
     text-align: center;
     margin-top: 2rem;
     padding: 0 1rem;
   }
-  
+
   .contact-phone {
     justify-content: center;
   }
-  
+
   .hero-scroll-btn {
     width: 45px;
     height: 45px;
@@ -797,13 +828,179 @@ body.loaded #page-content {
   .hero-title {
     font-size: 1.75rem;
   }
-  
+
   .hero-description {
     font-size: 0.85rem;
   }
-  
+
   .btn-cotizar {
-    width: 30%!important;
+    width: 30% !important;
     justify-content: center;
+  }
+}
+/* ===================================
+   PANEL DERECHO FIJO
+   =================================== */
+.right-panel {
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 148px !important;
+  background: #1e1e1eb2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+   justify-content: space-between !important;
+  align-items: center;
+  padding: 50px 0 !important;
+  text-align: center !important;
+  color: white !important;
+  z-index: 10 !important;
+  backdrop-filter: blur(3px) !important;
+}
+
+.panel-options {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+  gap: 40px;
+}
+
+.panel-item {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 10px;
+  opacity: 0.9;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.panel-item:hover {
+  opacity: 1;
+}
+
+.panel-item img {
+  width: 55px !important;
+  height: 55px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.panel-item h2 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+}
+
+.panel-arrow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background: var(--color-primary); /* naranja */
+  cursor: pointer;
+}
+
+.panel-arrow:hover {
+  background: var(--color-secondary); /* amarillo */
+}
+
+.panel-arrow i {
+  font-size: 26px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .right-panel {
+    display: none !important;
+  }
+}
+
+/* Sección de servicios móviles */
+.mobile-services {
+  display: none; /* Oculto por defecto */
+  background-color: #646464; /* Fondo gris oscuro */
+  color: white;
+  padding: 15px 15px;
+  width: 100%;
+}
+
+.service-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: #646464;
+  overflow: hidden;
+}
+
+.service-image {
+  width: 20%;
+  height: 20%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.service-content {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.service-content h2 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: white; /* Color naranja de Intersteel */
+  text-decoration: none!important;
+}
+
+a {
+  text-decoration: none!important;
+}
+
+.service-content p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Mostrar solo en móviles */
+@media (max-width: 768px) {
+  .mobile-services {
+    display: block;
+  }
+}
+
+/* Estilos para mostrar cómo se vería en el contexto de la página */
+.demo-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.desktop-message {
+  background-color: #e4e2e2;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.mobile-message {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-message {
+    display: none;
+  }
+
+  .mobile-message {
+    display: block;
+    background-color: #dd5d2a;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
   }
 }

@@ -7,27 +7,30 @@ class FooterComponent extends HTMLElement {
     this.innerHTML = `
 <footer class="footer">
           <div class="footer-container">
+          <div class="footer-column mb-5">
+            <h3 class="footer-titulo">
+              Contacto <span class="arrow">→</span>
+            </h3>
+          </div>
             <div class="footer-content">
-              <!-- Columna 1: Contacto -->
-              <div class="footer-column">
-                <h3 class="footer-titulo">
-                  Contacto <span class="arrow">→</span>
-                </h3>
-              </div>
-
-              <!-- Columna 2: Mapa de sitio -->
-              <div class="footer-column">
-                <h4>Mapa de sitio</h4>
-                <ul>
-                  <li>
-                    <a href="index.html">Home/Nosotros</a>
-                  </li>
-                  <li><a href="estructuras.html">Estructuras metálicas</a></li>
-                  <li><a href="proyectos.html">Proyectos industriales</a></li>
-                  <li><a href="portafolio.html">Portafolio/Galería</a></li>
-                  <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-              </div>
+                    <div class="footer-sitemap">
+        <div class="sitemap-column">
+          <h4>Mapa de sitio</h4>
+          <ul>
+            <li><a href="index.html">Home/Nosotros</a></li>
+            <li><a href="estructuras.html">Estructuras metálicas</a></li>
+            <li><a href="proyectos.html">Proyectos industriales</a></li>
+          </ul>
+        </div>
+        
+        <div class="sitemap-column">
+          <h4>&nbsp;</h4>
+          <ul>
+            <li><a href="portafolio.html">Portafolio/Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
 
               <!-- Columna 3: Atención -->
               <div class="footer-column">
@@ -39,7 +42,7 @@ class FooterComponent extends HTMLElement {
                       Santiago de Querétaro, Qro.</a
                     >
                   </li>
-                  <li>
+                  <li class="mt-4">
                     <a
                       href="https://www.google.com/maps/search/?api=1&query=Cerro+Blanco+500,+Piso+1,+Interior+7,+Centro+Sur,+76090+Santiago+de+Querétaro,+Qro."
                       target="_blank"
@@ -115,7 +118,7 @@ class FooterComponent extends HTMLElement {
                     target="_blank"
                     rel="noopener noreferrer"
                     class="newsletter-btn"
-                    >Chatea con nosotros →</a
+                    >Chatea con nosotros por WhatsApp →</a
                   >
                 </div>
               </div>
