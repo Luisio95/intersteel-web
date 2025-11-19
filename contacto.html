@@ -181,8 +181,7 @@
         opacity: 0;
         transform: translateY(80px);
         filter: blur(6px);
-        transition:
-          opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+        transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
           transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
           filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
       }
@@ -221,8 +220,7 @@
         opacity: 0;
         transform: translateY(50px);
         filter: blur(5px);
-        transition:
-          opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
+        transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
           transform 1s cubic-bezier(0.25, 1, 0.5, 1),
           filter 1s cubic-bezier(0.25, 1, 0.5, 1);
       }
@@ -237,8 +235,7 @@
         opacity: 0;
         transform: translateY(40px);
         filter: blur(4px);
-        transition:
-          opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+        transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
           transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
           filter 0.8s cubic-bezier(0.25, 1, 0.5, 1);
       }
@@ -253,8 +250,7 @@
         opacity: 0;
         transform: translateY(60px);
         filter: blur(6px);
-        transition:
-          opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
+        transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
           transform 1s cubic-bezier(0.25, 1, 0.5, 1),
           filter 1s cubic-bezier(0.25, 1, 0.5, 1);
       }
@@ -270,7 +266,7 @@
       }
       .btn-animate:hover {
         transform: translateY(-4px) scale(1.03);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
       }
 
       /* IMÁGENES */
@@ -289,8 +285,7 @@
         opacity: 0;
         transform: translateY(40px);
         filter: blur(4px);
-        transition:
-          opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+        transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
           transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
           filter 0.8s cubic-bezier(0.25, 1, 0.5, 1);
       }
@@ -305,8 +300,7 @@
       .contact-detail-item {
         opacity: 0;
         transform: translateX(30px);
-        transition:
-          opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1),
           transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
       }
 
@@ -320,8 +314,7 @@
         opacity: 0;
         transform: translateY(-30px);
         filter: blur(4px);
-        transition:
-          opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s,
+        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s,
           transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s,
           filter 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
       }
@@ -337,8 +330,7 @@
         opacity: 0;
         transform: translateY(60px);
         filter: blur(8px);
-        transition:
-          opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
+        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
           transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
           filter 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
       }
@@ -364,8 +356,7 @@
         opacity: 0;
         transform: scale(0.95);
         filter: blur(4px);
-        transition:
-          opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+        transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
           transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
           filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
       }
@@ -383,16 +374,19 @@
       <!-- Contenido principal con animación -->
       <main id="page-content">
         <!-- Header Component -->
-        <header-component></header-component>
-        
+        <header-component-white></header-component-white>
+
         <!-- Hero Section con animación -->
-        <div class="hero-container hero-portafolio section-animate slide-up">
+        <div
+          class="hero-container hero-portafolio section-animate slide-up"
+          style="background-color: white"
+        >
           <!-- Overlay oscuro -->
           <div class="hero-overlay"></div>
 
           <!-- Contacto WhatsApp con animación -->
           <div class="hero-contact hero-portafolio-contact animate-item">
-            <p class="contact-label">
+            <p class="contact-label" style="color: #000">
               Chatea con nosotros<br />
               Por WhatsApp
             </p>
@@ -400,6 +394,7 @@
               href="https://wa.me/524428693588"
               target="_blank"
               class="contact-phone btn-animate"
+              style="color: #000"
             >
               <img src="public/img/menu/whatsapp.png" alt="whatsapp" />
               (442) 869 3588
@@ -408,7 +403,9 @@
         </div>
 
         <!-- Contact Section con animaciones -->
-        <section class="contact-section container-fluid py-5 section-animate scale-in">
+        <section
+          class="contact-section container-fluid py-5 section-animate scale-in parallax-container"
+        >
           <div class="container-fluid">
             <div class="row g-0 align-items-stretch">
               <!-- Columna izquierda (imagen) -->
@@ -416,7 +413,8 @@
                 <img
                   src="public/img/contacto/contacto.png"
                   alt="Obra Intersteel"
-                  class="img-fluid w-100 h-100 object-fit-cover"
+                  class="img-fluid w-100 h-100 object-fit-cover parallax-img parallax-slow"
+                  data-speed="0.2"
                 />
               </div>
 
@@ -493,10 +491,16 @@
                         required
                       ></textarea>
                     </div>
-                    <div class="col-12 text-end">
-                      <button type="submit" class="btn btn-dark px-4 py-2 btn-animate">
+                    <div class="col-12 text-start">
+                      <!-- <button type="submit" class="btn btn-dark px-4 py-2 btn-animate">
                         Enviar
-                      </button>
+                      </button> -->
+                      <a
+                        type="submit"
+                        class="btn btn-border-orange px-4 py-2 mt-4 d-inline-flex align-items-center btn-animate"
+                      >
+                        <i class="bi bi-arrow-right me-2"></i> Enviar
+                      </a>
                     </div>
                   </div>
                 </form>
@@ -504,20 +508,26 @@
                 <!-- Información de contacto con animaciones escalonadas -->
                 <div class="contact-details mt-4">
                   <div class="row gy-3">
-                    <div class="col-md-6 d-flex align-items-start gap-2 contact-detail-item">
+                    <div
+                      class="col-md-6 d-flex align-items-start gap-2 contact-detail-item"
+                    >
                       <i class="bi bi-geo-alt text-secondary fs-5"></i>
                       <p class="mb-0 small text-muted">
                         Cerro Blanco 500, Piso 1, Interior 7,<br />
                         Centro Sur, 76090 Santiago de Querétaro, Qro.
                       </p>
                     </div>
-                    <div class="col-md-6 d-flex align-items-start gap-2 contact-detail-item">
+                    <div
+                      class="col-md-6 d-flex align-items-start gap-2 contact-detail-item"
+                    >
                       <i class="bi bi-envelope text-secondary fs-5"></i>
                       <p class="mb-0 small text-muted">
                         contacto@intersteelmx.com
                       </p>
                     </div>
-                    <div class="col-md-6 d-flex align-items-start gap-2 contact-detail-item">
+                    <div
+                      class="col-md-6 d-flex align-items-start gap-2 contact-detail-item"
+                    >
                       <i class="bi bi-telephone text-secondary fs-5"></i>
                       <p class="mb-0 small text-muted">(442) 869 3588</p>
                     </div>
@@ -529,47 +539,96 @@
         </section>
 
         <!-- Projects Map Section con animaciones -->
-        <section class="projects-map-section container-fluid px-0 section-animate slide-in-right">
+<section
+          class="projects-map-section container-fluid px-0 section-animate parallax-container"
+        >
           <div class="row g-0">
-            <!-- Columna izquierda: Mapa con animación -->
-            <div class="col-12 col-lg-8">
-              <div class="map-animate img-animate">
-                <img
-                  src="public/img/home/mapa.png"
-                  alt="Mapa Intersteel"
-                  class="img-fluid w-100 h-100 object-fit-cover"
-                />
-              </div>
+            <!-- Columna izquierda: Mapa -->
+            <div class="col-12 col-lg-8 img-animate">
+              <img
+                src="public/img/home/mapa.png"
+                alt="Mapa Intersteel"
+                class="img-fluid w-100 h-100 object-fit-cover parallax-img parallax-slow"
+                data-speed="0.2"
+              />
             </div>
 
-            <!-- Columna derecha: Ciudades con animaciones -->
+            <!-- Columna derecha: Ciudades -->
             <div
               class="col-12 col-lg-4 bg-light-gray d-flex flex-column justify-content-center"
             >
-              <div class="cities-box p-4">
+              <div class="cities-box">
                 <h2 class="title mb-4 text-left animate-item">
                   <span class="text-orange">Ciudades y Estados</span><br />con
                   proyectos
                 </h2>
 
-                <!-- Contenedor con scroll y animaciones escalonadas -->
+                <!-- Contenedor con scroll -->
                 <div class="cities-list">
-                  <ul class="list-unstyled m-0">
-                    <li class="stagger-item">San Luis Potosí, San Luis Potosí</li>
-                    <li class="stagger-item">Estado de México</li>
-                    <li class="stagger-item">Los Reyes La Paz, Estado de México</li>
-                    <li class="stagger-item">Naucalpan, Estado de México</li>
-                    <li class="stagger-item">Atizapán, Estado de México</li>
-                    <li class="stagger-item">Toluca, Estado de México</li>
-                    <li class="stagger-item">Atlacomulco, Estado de México</li>
-                    <li class="stagger-item">Cuautitlán, Estado de México</li>
-                    <li class="stagger-item">Texcoco, Estado de México</li>
-                    <li class="stagger-item">Xonacatlán, Estado de México</li>
-                  </ul>
-                </div>
+          <ul class="list-unstyled m-0">
+            <li class="animate-item">Morelia, Michoacán</li>
+            <li class="animate-item">Zamora, Michoacán</li>
+            <li class="animate-item">Villa Jiménez, Michoacán</li>
+            <li class="animate-item">Zacapu, Michoacán</li>
+            <li class="animate-item">Apatzingán, Michoacán</li>
+            <li class="animate-item">Indaparapeo, Michoacán</li>
+            <li class="animate-item">Yurecuaro, Michoacán</li>
+            <li class="animate-item">Maravatío, Michoacán</li>
+            <li class="animate-item">Tacámbaro, Michoacán</li>
+            <li class="animate-item">Lázaro Cárdenas, Michoacán</li>
+            <li class="animate-item">Uruapan, Michoacán</li>
+            <li class="animate-item">León, Guanajuato</li>
+            <li class="animate-item">Silao, Guanajuato</li>
+            <li class="animate-item">Salamanca, Guanajuato</li>
+            <li class="animate-item">Pueblo Nuevo, Guanajuato</li>
+            <li class="animate-item">Valle de Santiago, Guanajuato</li>
+            <li class="animate-item">Irapuato, Guanajuato</li>
+            <li class="animate-item">Celaya, Guanajuato</li>
+            <li class="animate-item">Moroleon, Guanajuato</li>
+            <li class="animate-item">Tepezalaj, Aguascalientes</li>
+            <li class="animate-item">Querétaro, Querétaro</li>
+            <li class="animate-item">San Juan del Río, Querétaro</li>
+            <li class="animate-item">El Marqués, Querétaro</li>
+            <li class="animate-item">Los Reyes La Paz, Estado de México</li>
+            <li class="animate-item">Naucalpan, Estado de México</li>
+            <li class="animate-item">Atizapán, Estado de México</li>
+            <li class="animate-item">Toluca, Estado de México</li>
+            <li class="animate-item">Atlacomulco, Estado de México</li>
+            <li class="animate-item">Cuautitlán, Estado de México</li>
+            <li class="animate-item">Texcoco, Estado de México</li>
+            <li class="animate-item">Xonacatlán, Estado de México</li>
+            <li class="animate-item">Huehuetoca, Estado de México</li>
+            <li class="animate-item">Oceana-a, Ciudad de México</li>
+            <li class="animate-item">Tlalpan, Ciudad de México</li>
+            <li class="animate-item">Ciudad de México</li>
+            <li class="animate-item">Puebla, Puebla</li>
+            <li class="animate-item">Guadalajara, Jalisco</li>
+            <li class="animate-item">Puerto Vallarta, Jalisco</li>
+            <li class="animate-item">Ciudad Guzmán, Jalisco</li>
+            <li class="animate-item">San Juan de los Lagos, Jalisco</li>
+            <li class="animate-item">Nuevo Vallarta, Nayarit</li>
+            <li class="animate-item">San Luis Potosí, San Luis Potosí</li>
+            <li class="animate-item">Tijuana, Baja California</li>
+            <li class="animate-item">Tecate, Baja California</li>
+            <li class="animate-item">Ciudad Juárez, Chihuahua</li>
+            <li class="animate-item">Torreón, Coahuila</li>
+            <li class="animate-item">Gómez Palacio, Durango</li>
+            <li class="animate-item">Tampico, Tamaulipas</li>
+            <li class="animate-item">Altamira, Tamaulipas</li>
+            <li class="animate-item">Monterrey, Nuevo León</li>
+            <li class="animate-item">Cadereyta, Nuevo León</li>
+            <li class="animate-item">Guadalupe, Nuevo León</li>
+            <li class="animate-item">Coatzacoalcos, Veracruz</li>
+            <li class="animate-item">Cancún, Quintana Roo</li>
+            <li class="animate-item">Playa del Carmen, Quintana Roo</li>
+            <li class="animate-item">Tulum, Quintana Roo</li>
+          </ul>
+        </div>
+
+                
                 <a
                   href="contacto.html"
-                  class="btn btn-dark px-4 py-2 d-inline-flex align-items-center mt-5 btn-animate animate-item"
+                  class="btn btn-dark px-4 py-2 d-inline-flex align-items-center mt-5 btn-animate"
                 >
                   <i class="bi bi-arrow-right me-2"></i> Cotizar
                 </a>
@@ -577,7 +636,6 @@
             </div>
           </div>
         </section>
-        
         <!-- footer -->
         <footer-component></footer-component>
       </main>
@@ -587,7 +645,7 @@
     <div class="menu-overlay" id="menuOverlay"></div>
 
     <!-- Scripts -->
-    <script src="components/header.js"></script>
+    <script src="components/headerWhite.js"></script>
     <script src="components/galeria-slider.js"></script>
     <script src="components/footer.js"></script>
 
@@ -706,71 +764,73 @@
       // SISTEMA DE ANIMACIONES INTERSTEEL PARA CONTACTO
       // ===================================
 
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         // Configuración del Intersection Observer
         const observerOptions = {
           root: null,
-          rootMargin: '0px 0px -10% 0px',
-          threshold: 0.1
+          rootMargin: "0px 0px -10% 0px",
+          threshold: 0.1,
         };
 
         // Función para animar elementos con delay escalonado
         function animateStaggerItems(container, delay = 100) {
-          const items = container.querySelectorAll('.stagger-item');
+          const items = container.querySelectorAll(".stagger-item");
           items.forEach((item, index) => {
             setTimeout(() => {
-              item.classList.add('visible');
+              item.classList.add("visible");
             }, index * delay);
           });
         }
 
         // Función para animar formulario con delay escalonado
         function animateFormItems(container, delay = 80) {
-          const items = container.querySelectorAll('.form-animate');
+          const items = container.querySelectorAll(".form-animate");
           items.forEach((item, index) => {
             setTimeout(() => {
-              item.classList.add('visible');
+              item.classList.add("visible");
             }, index * delay);
           });
         }
 
         // Función para animar detalles de contacto
         function animateContactDetails(container, delay = 120) {
-          const items = container.querySelectorAll('.contact-detail-item');
+          const items = container.querySelectorAll(".contact-detail-item");
           items.forEach((item, index) => {
             setTimeout(() => {
-              item.classList.add('visible');
+              item.classList.add("visible");
             }, index * delay);
           });
         }
 
         // Función callback para el observer
         const observerCallback = (entries, observer) => {
-          entries.forEach(entry => {
+          entries.forEach((entry) => {
             if (entry.isIntersecting) {
               // Animar la sección principal
-              entry.target.classList.add('visible');
-              
+              entry.target.classList.add("visible");
+
               // Animar elementos individuales dentro de la sección
-              const animateItems = entry.target.querySelectorAll('.animate-item');
+              const animateItems =
+                entry.target.querySelectorAll(".animate-item");
               animateItems.forEach((item, index) => {
                 setTimeout(() => {
-                  item.classList.add('visible');
+                  item.classList.add("visible");
                 }, index * 100);
               });
 
               // Animaciones específicas por tipo de sección
-              if (entry.target.classList.contains('contact-section')) {
+              if (entry.target.classList.contains("contact-section")) {
                 // Animar título de contacto
-                const contactTitle = entry.target.querySelector('.contact-title');
+                const contactTitle =
+                  entry.target.querySelector(".contact-title");
                 if (contactTitle) {
                   setTimeout(() => {
-                    contactTitle.classList.add('visible');
+                    contactTitle.classList.add("visible");
                   }, 300);
                 }
 
                 // Animar formulario
-                const contactForm = entry.target.querySelector('.contact-form');
+                const contactForm = entry.target.querySelector(".contact-form");
                 if (contactForm) {
                   setTimeout(() => {
                     animateFormItems(contactForm, 80);
@@ -778,25 +838,26 @@
                 }
 
                 // Animar detalles de contacto
-                const contactDetails = entry.target.querySelector('.contact-details');
+                const contactDetails =
+                  entry.target.querySelector(".contact-details");
                 if (contactDetails) {
                   setTimeout(() => {
                     animateContactDetails(contactDetails, 120);
                   }, 800);
                 }
               }
-              
-              if (entry.target.classList.contains('projects-map-section')) {
+
+              if (entry.target.classList.contains("projects-map-section")) {
                 // Animar mapa
-                const map = entry.target.querySelector('.map-animate');
+                const map = entry.target.querySelector(".map-animate");
                 if (map) {
                   setTimeout(() => {
-                    map.classList.add('visible');
+                    map.classList.add("visible");
                   }, 300);
                 }
 
                 // Animar lista de ciudades
-                const citiesList = entry.target.querySelector('.cities-list');
+                const citiesList = entry.target.querySelector(".cities-list");
                 if (citiesList) {
                   setTimeout(() => {
                     animateStaggerItems(citiesList, 100);
@@ -811,37 +872,100 @@
         };
 
         // Crear el observer
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        const observer = new IntersectionObserver(
+          observerCallback,
+          observerOptions
+        );
 
         // Observar todas las secciones con animación
-        const animatedSections = document.querySelectorAll('.section-animate');
-        animatedSections.forEach(section => {
+        const animatedSections = document.querySelectorAll(".section-animate");
+        animatedSections.forEach((section) => {
           observer.observe(section);
         });
 
         // Observar elementos individuales fuera de secciones
-        const individualAnimatedItems = document.querySelectorAll('.animate-item:not(.section-animate .animate-item)');
-        individualAnimatedItems.forEach(item => {
+        const individualAnimatedItems = document.querySelectorAll(
+          ".animate-item:not(.section-animate .animate-item)"
+        );
+        individualAnimatedItems.forEach((item) => {
           observer.observe(item);
         });
 
         // Animar elementos del hero inmediatamente
-        const heroContact = document.querySelector('.hero-contact');
+        const heroContact = document.querySelector(".hero-contact");
         if (heroContact) {
           setTimeout(() => {
-            heroContact.classList.add('visible');
+            heroContact.classList.add("visible");
           }, 800);
         }
 
         // Animar header después de la transición de página
         setTimeout(() => {
-          const header = document.querySelector('header-component');
+          const header = document.querySelector("header-component");
           if (header) {
-            header.style.opacity = '1';
-            header.style.transform = 'translateY(0)';
+            header.style.opacity = "1";
+            header.style.transform = "translateY(0)";
           }
         }, 600);
       });
+
+      // ===================================
+// EFECTO PARALLAX EN SCROLL
+// ===================================
+
+document.addEventListener("DOMContentLoaded", function () {
+  let ticking = false;
+  let lastScrollY = window.scrollY;
+
+  // Seleccionar todas las imágenes con efecto parallax
+  const parallaxImages = document.querySelectorAll(".parallax-img");
+
+  function updateParallax() {
+    const scrollY = window.scrollY;
+
+    parallaxImages.forEach((img) => {
+      const speed = parseFloat(img.getAttribute("data-speed")) || 0.5;
+      const rect = img.getBoundingClientRect();
+      const imgTop = rect.top + scrollY;
+      const imgHeight = img.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      // Solo aplicar parallax si la imagen está visible en el viewport
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        // Calcular el desplazamiento basado en la posición de scroll
+        const yPos = (scrollY - imgTop) * speed;
+
+        // Aplicar transformación con límites para evitar desplazamientos excesivos
+        const maxMove = imgHeight * 0.15; // Máximo 15% de movimiento
+        const clampedYPos = Math.max(-maxMove, Math.min(maxMove, yPos));
+
+        img.style.transform = `translate3d(0, ${clampedYPos}px, 0)`;
+      }
+    });
+
+    ticking = false;
+  }
+
+  function requestTick() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }
+
+  // Escuchar el evento scroll con throttling
+  window.addEventListener("scroll", requestTick, { passive: true });
+
+  // Actualizar parallax al cargar la página
+  updateParallax();
+
+  // Actualizar parallax al redimensionar la ventana
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(updateParallax, 100);
+  });
+});
     </script>
   </body>
 </html>

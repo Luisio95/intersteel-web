@@ -181,19 +181,19 @@
         <header-component></header-component>
 
         <!-- Hero Section con animación -->
-        <div class="hero-container section-animate slide-in-left">
+        <div class="hero-container section-animate slide-in-left parallax-container">
           <!-- Imagen de fondo -->
           <img
             src="public/img/estructuras/estructuras.png"
             alt="Intersteel Background"
-          />
+            class="parallax-img" data-speed="0.3" />
 
           <!-- Overlay oscuro -->
           <div class="hero-overlay"></div>
 
           <!-- Texto sobre la imagen -->
           <div class="hero-text">
-            <h1 class="animate-item">H1 Estructuras metálicas</h1>
+            <h1 class="animate-item">Estructuras metálicas</h1>
 
             <p class="animate-item">
               Fabricamos y montamos
@@ -232,11 +232,11 @@
         <section class="about-intersteel container-fluid px-0 section-animate">
           <div class="row g-0">
             <!-- Columna izquierda -->
-            <div class="col-12 col-lg-6 position-relative order-1 order-lg-1">
+            <div class="col-12 col-lg-6 position-relative order-1 order-lg-1 parallax-container">
               <!-- Cuadro anaranjado (solo visible en desktop) -->
               <div
                 class="orange-box position-absolute top-50 end-0 translate-middle-y d-none d-lg-block animate-item"
-                style="max-width: 545px"
+                style="max-width: 650px"
               >
                 <h2 class="mb-3">Fabricación de estructuras Metálicas como:</h2>
                 <p class="mb-4">
@@ -328,7 +328,9 @@
               <img
                 src="public/img/estructuras/grua-est.png"
                 alt="Nave industrial"
-                class="img-fluid w-100 h-100 object-fit-cover"
+                class="img-fluid w-100 h-100 object-fit-cover parallax-img parallax-slow"
+                        data-speed="0.2"
+
               />
             </div>
           </div>
@@ -336,14 +338,14 @@
 
         <!-- Servicios Section con animación -->
         <section
-          class="estructuas-section container-fluid px-0 section-animate slide-in-right"
+          class="estructuas-section container-fluid px-0 section-animate slide-in-right parallax-container"
         >
           <div class="row g-0">
             <!-- Columna izquierda: Servicios -->
             <div
               class="col-12 col-lg-6 bg-light-gray d-flex flex-column justify-content-center"
             >
-              <div class="cities-box p-4">
+              <div class="cities-box">
                 <h2 class="title mb-4 text-left animate-item">
                   <span class="text-orange">Servicios de</span><br />
                   estructuras metálicas
@@ -353,7 +355,10 @@
                 <div class="cities-list">
                   <ul class="list-unstyled m-0">
                     <li class="service-item">
-                      <h2 style="color: #dd5d2a">
+                      <h2
+                        class="service-title"
+                        data-image="public/img/estructuras/Naves industriales.png"
+                      >
                         Naves industriales de gran claro
                       </h2>
                     </li>
@@ -365,7 +370,10 @@
                       </p>
                     </li>
                     <li class="service-item">
-                      <h2 style="color: #dd5d2a">
+                      <h2
+                        class="service-title"
+                        data-image="public/img/estructuras/estructuras-1.png"
+                      >
                         Bodegas y almacenes logísticos
                       </h2>
                     </li>
@@ -377,7 +385,10 @@
                       </p>
                     </li>
                     <li class="service-item">
-                      <h2 style="color: #dd5d2a">
+                      <h2
+                        class="service-title"
+                        data-image="public/img/estructuras/Parques industriales.png"
+                      >
                         Parques industriales y centros de distribución
                       </h2>
                     </li>
@@ -405,9 +416,11 @@
             >
               <div class="imagen-container">
                 <img
-                  src="public/img/estructuras/estructuras-1.png"
+                  id="service-image"
+                  src="public/img/estructuras/Naves industriales.png"
                   alt="Estructura metálica Intersteel"
-                  class="img-fluid"
+                  class="img-fluid w-100 h-100 object-fit-cover parallax-img parallax-fast"
+                  data-speed="0.25"
                 />
               </div>
             </div>
@@ -628,6 +641,95 @@
           }, 300);
         }
       });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const serviceTitles = document.querySelectorAll(".service-title");
+        const serviceImage = document.getElementById("service-image");
+
+        // Activar el primer servicio por defecto
+        if (serviceTitles.length > 0) {
+          serviceTitles[0].classList.add("active");
+        }
+
+        serviceTitles.forEach((title) => {
+          title.addEventListener("click", function () {
+            // Remover la clase active de todos los títulos
+            serviceTitles.forEach((t) => t.classList.remove("active"));
+
+            // Agregar la clase active al título clickeado
+            this.classList.add("active");
+
+            // Obtener la ruta de la imagen del atributo data-image
+            const newImage = this.getAttribute("data-image");
+
+            // Cambiar la imagen con efecto de fade
+            serviceImage.style.opacity = "0";
+
+            setTimeout(() => {
+              serviceImage.src = newImage;
+              serviceImage.style.opacity = "1";
+            }, 300);
+          });
+        });
+      });
+
+      // ===================================
+// EFECTO PARALLAX EN SCROLL
+// ===================================
+
+document.addEventListener("DOMContentLoaded", function () {
+  let ticking = false;
+  let lastScrollY = window.scrollY;
+
+  // Seleccionar todas las imágenes con efecto parallax
+  const parallaxImages = document.querySelectorAll(".parallax-img");
+
+  function updateParallax() {
+    const scrollY = window.scrollY;
+
+    parallaxImages.forEach((img) => {
+      const speed = parseFloat(img.getAttribute("data-speed")) || 0.5;
+      const rect = img.getBoundingClientRect();
+      const imgTop = rect.top + scrollY;
+      const imgHeight = img.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      // Solo aplicar parallax si la imagen está visible en el viewport
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        // Calcular el desplazamiento basado en la posición de scroll
+        const yPos = (scrollY - imgTop) * speed;
+
+        // Aplicar transformación con límites para evitar desplazamientos excesivos
+        const maxMove = imgHeight * 0.15; // Máximo 15% de movimiento
+        const clampedYPos = Math.max(-maxMove, Math.min(maxMove, yPos));
+
+        img.style.transform = `translate3d(0, ${clampedYPos}px, 0)`;
+      }
+    });
+
+    ticking = false;
+  }
+
+  function requestTick() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }
+
+  // Escuchar el evento scroll con throttling
+  window.addEventListener("scroll", requestTick, { passive: true });
+
+  // Actualizar parallax al cargar la página
+  updateParallax();
+
+  // Actualizar parallax al redimensionar la ventana
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(updateParallax, 100);
+  });
+});
     </script>
   </body>
 </html>

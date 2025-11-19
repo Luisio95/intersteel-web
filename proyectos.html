@@ -181,19 +181,19 @@
         <header-component></header-component>
 
         <!-- Hero Section con animación -->
-        <div class="hero-container section-animate slide-in-left">
+        <div class="hero-container section-animate slide-in-left parallax-container">
           <!-- Imagen de fondo -->
           <img
             src="public/img/proyectos/proyectos.png"
             alt="Intersteel Background"
-          />
+            class="parallax-img" data-speed="0.3" />
 
           <!-- Overlay oscuro -->
           <div class="hero-overlay"></div>
 
           <!-- Texto sobre la imagen -->
           <div class="hero-text">
-            <h1 class="animate-item">H1 Proyectos industriales</h1>
+            <h1 class="animate-item">Proyectos industriales</h1>
 
             <p class="animate-item">
               Diseñamos y construimos de manera integral ayudando a nuestros
@@ -227,24 +227,23 @@
         </div>
 
         <!-- Sección de Construcciones con animación -->
-        <section class="construcciones-section section-animate scale-in">
-          <div class="construcciones-header">
-            <!-- Texto animado que se desplaza -->
-            <div class="texto-animado-container">
-              <div class="texto-animado">
-                <h2 class="construcciones-titulo">
-                  Tipos de <span class="text-orange">construcciones</span>
-                </h2>
-                <h2 class="construcciones-titulo">
-                  Tipos de <span class="text-orange">construcciones</span>
-                </h2>
-                <h2 class="construcciones-titulo">
-                  Tipos de <span class="text-orange">construcciones</span>
-                </h2>
-              </div>
+        <div class="construcciones-header">
+          <!-- Texto animado que se desplaza -->
+          <div class="texto-animado-container">
+            <div class="texto-animado">
+              <h2 class="construcciones-titulo">
+                Tipos de <span class="text-orange">construcciones</span>
+              </h2>
+              <h2 class="construcciones-titulo">
+                Tipos de <span class="text-orange">construcciones</span>
+              </h2>
+              <h2 class="construcciones-titulo">
+                Tipos de <span class="text-orange">construcciones</span>
+              </h2>
             </div>
           </div>
-
+        </div>
+        <section class="construcciones-section section-animate scale-in parallax-container">
           <div class="construcciones-container">
             <!-- Slider para móviles / Grid para desktop -->
             <div class="construcciones-grid">
@@ -254,12 +253,13 @@
                   <img
                     src="public/img/proyectos/proyectos-1.jpg"
                     alt="Naves industriales"
+                    class="parallax-img parallax-slow" data-speed="0.2"
                   />
                 </div>
                 <div class="construccion-info">
                   <h3 class="animate-item">Parque Industrial</h3>
                   <p class="animate-item">
-                    H3 Desarrollamos PARQUES INDUSTRIALES optimizando el uso del
+                    Desarrollamos PARQUES INDUSTRIALES optimizando el uso del
                     terreno y creando espacios eficientes que impulsan la
                     productividad y el crecimiento sostenible de nuestros
                     clientes.
@@ -273,12 +273,13 @@
                   <img
                     src="public/img/proyectos/proyectos-2.jpg"
                     alt="Bodegas"
+                    class="parallax-img parallax-fast" data-speed="0.25"
                   />
                 </div>
                 <div class="construccion-info">
                   <h3 class="animate-item">Nave Industrial</h3>
                   <p class="animate-item">
-                    H3 Diseñamos y construimos de manera integral ayudando a
+                    Diseñamos y construimos de manera integral ayudando a
                     nuestros clientes a albergar sus procesos productivos de
                     fabricación, ensamblaje o maquinaria pesada de cualquier
                     magnitud.⁠
@@ -292,12 +293,13 @@
                   <img
                     src="public/img/proyectos/proyectos-3.png"
                     alt="Parques industriales"
+                    class="parallax-img parallax-slow" data-speed="0.2"
                   />
                 </div>
                 <div class="construccion-info">
                   <h3 class="animate-item">Bodega Industrial</h3>
                   <p class="animate-item">
-                    H3 Diseñamos y construimos bodegas industriales que brindan
+                    Diseñamos y construimos bodegas industriales que brindan
                     seguridad, resistencia y funcionalidad, protegiendo las
                     operaciones y activos de nuestros clientes ante diferentes
                     entornos.
@@ -332,18 +334,19 @@
               <!-- Cuadro anaranjado (solo visible en desktop) -->
               <div
                 class="orange-box position-absolute top-50 end-0 translate-middle-y d-none d-lg-block animate-item"
-                style="max-width: 545px"
+                style="max-width: 600px"
               >
                 <h2 class="mb-3">
                   Fabricación de Proyectos industriales como:
                 </h2>
+                <br />
                 <p class="mb-4">
-                  <span class="stagger-item">- H2 Parques industriales</span
-                  ><br />
-                  <span class="stagger-item">- H2 Proyectos industriales</span>
-                  <br />
-                  <span class="stagger-item">- H2 Bodega industrial</span>
-                  <br />
+                  <span class="stagger-item">- Parques industriales</span
+                  ><br /><br />
+                  <span class="stagger-item">- Proyectos industriales</span>
+                  <br /><br />
+                  <span class="stagger-item">- Bodega industrial</span>
+                  <br /><br />
                 </p>
                 <a
                   href="contacto.html"
@@ -361,11 +364,10 @@
                   Fabricación de Proyectos industriales como:
                 </h2>
                 <p class="mb-4">
-                  <span class="stagger-item">- H2 Parques industriales</span
-                  ><br />
-                  <span class="stagger-item">- H2 Proyectos industriales</span>
+                  <span class="stagger-item">- Parques industriales</span><br />
+                  <span class="stagger-item">- Proyectos industriales</span>
                   <br />
-                  <span class="stagger-item">- H2 Bodega industrial</span>
+                  <span class="stagger-item">- Bodega industrial</span>
                   <br />
                 </p>
                 <a
@@ -384,7 +386,8 @@
               <img
                 src="public/img/proyectos/proyectos-5.png"
                 alt="Nave industrial"
-                class="img-fluid w-100 h-100 object-fit-cover"
+                class="img-fluid w-100 h-100 object-fit-cover parallax-img parallax-slow"
+                data-speed="0.3"
               />
             </div>
           </div>
@@ -392,7 +395,7 @@
 
         <!-- Servicios Section con animación -->
         <section
-          class="estructuas-section container-fluid px-0 section-animate slide-in-left"
+          class="estructuas-section container-fluid px-0 section-animate slide-in-left parallax-container"
         >
           <div class="row g-0">
             <!-- Columna izquierda: Servicios -->
@@ -411,11 +414,14 @@
                 <div class="cities-list">
                   <ul class="list-unstyled m-0">
                     <li class="service-item">
-                      <h2 style="color: #dd5d2a">
+                      <h2
+                        class="service-title-proyecto"
+                        data-image="public/img/proyectos/estructuras-4.png"
+                      >
                         Asesoramiento, análisis previo
                       </h2>
                     </li>
-                    <li class="service-item">
+                    <li class="service-item service-content">
                       <p>
                         - Asesoría para el estudio comercial y financiero del
                         proyecto inmobiliario.
@@ -426,12 +432,16 @@
                         desarrollo del proyecto inmobiliario.
                       </p>
                     </li>
+
                     <li class="service-item">
-                      <h2 style="color: #dd5d2a">
+                      <h2
+                        class="service-title-proyecto"
+                        data-image="public/img/proyectos/PROYECTO EJECTIVO INDUSTRIAL.png"
+                      >
                         Proyecto ejecutivo industrial
                       </h2>
                     </li>
-                    <li class="service-item">
+                    <li class="service-item service-content">
                       <p>- Diseño Arquitectónico.</p>
                       <p>- Renderizado.</p>
                       <p>- Cálculo Estructural.</p>
@@ -442,6 +452,70 @@
                       <p>- Presupuestos y cuantificación.</p>
                       <p>- Programación de obra.</p>
                       <p>- Servicio de documentación legal y administrativa.</p>
+                    </li>
+
+                    <li class="service-item">
+                      <h2
+                        class="service-title-proyecto"
+                        data-image="public/img/proyectos/OBRA CIVIL.png"
+                      >
+                        Obra civil
+                      </h2>
+                    </li>
+                    <li class="service-item service-content">
+                      <p>- Movimientos de tierras.</p>
+                      <p>- Cimentación.</p>
+                      <p>- Construcción de cerramientos (muros y pisos).</p>
+                      <p>
+                        - Urbanización exterior y vialidades (calles, banquetas,
+                        rampas, etc).
+                      </p>
+                    </li>
+
+                    <li class="service-item">
+                      <h2
+                        class="service-title-proyecto"
+                        data-image="public/img/proyectos/ESTRUCTURA METALICA.png"
+                      >
+                        Estructura metálica
+                      </h2>
+                    </li>
+                    <li class="service-item service-content">
+                      <p>- Diseño de estructura metálica.</p>
+                      <p>- Fabricación de estructura metálica.</p>
+                      <p>- Armado y montaje de estructura metálica.</p>
+                      <p>- Desmantelamiento de estructuras metálicas.</p>
+                    </li>
+
+                    <li class="service-item">
+                      <h2
+                        class="service-title-proyecto"
+                        data-image="public/img/proyectos/cubiertas.png"
+                      >
+                        Cubiertas
+                      </h2>
+                    </li>
+                    <li class="service-item service-content">
+                      <p>
+                        - Laminado de cualquier tipo en cubiertas y faldones
+                        metálicos.
+                      </p>
+                      <p>- Recubrimiento multypanel en fachadas y cubiertas.</p>
+                      <p>
+                        - Revestimiento de alucobon en fachadas y cubiertas.
+                      </p>
+                      <p>
+                        - Mantenimiento de cubiertas y fachadas de cualquier
+                        tipo de lámina o multypanel.
+                      </p>
+                      <p>
+                        - Servicio de instalación de canalones, bajantes y
+                        remates metálicos.
+                      </p>
+                      <p>
+                        - Soluciones para techos nuevos, rehabilitados o
+                        ampliaciones.
+                      </p>
                     </li>
                   </ul>
                 </div>
@@ -460,9 +534,11 @@
             >
               <div class="imagen-container">
                 <img
+                  id="service-image-proyecto"
                   src="public/img/proyectos/estructuras-4.png"
                   alt="Estructura metálica Intersteel"
-                  class="img-fluid"
+                  class="img-fluid w-100 h-100 object-fit-cover parallax-img parallax-slow"
+                  data-speed="0.2"
                 />
               </div>
             </div>
@@ -771,6 +847,99 @@
           }, 100);
         });
       });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const serviceTitlesProyecto = document.querySelectorAll(
+          ".service-title-proyecto"
+        );
+        const serviceImageProyecto = document.getElementById(
+          "service-image-proyecto"
+        );
+
+        // Activar el primer servicio por defecto
+        if (serviceTitlesProyecto.length > 0) {
+          serviceTitlesProyecto[0].classList.add("active");
+        }
+
+        serviceTitlesProyecto.forEach((title) => {
+          title.addEventListener("click", function () {
+            // Remover la clase active de todos los títulos
+            serviceTitlesProyecto.forEach((t) => t.classList.remove("active"));
+
+            // Agregar la clase active al título clickeado
+            this.classList.add("active");
+
+            // Obtener la ruta de la imagen del atributo data-image
+            const newImage = this.getAttribute("data-image");
+
+            // Cambiar la imagen con efecto de fade
+            serviceImageProyecto.style.opacity = "0";
+
+            setTimeout(() => {
+              serviceImageProyecto.src = newImage;
+              serviceImageProyecto.style.opacity = "1";
+            }, 300);
+          });
+        });
+      });
+
+      // ===================================
+// EFECTO PARALLAX EN SCROLL
+// ===================================
+
+document.addEventListener("DOMContentLoaded", function () {
+  let ticking = false;
+  let lastScrollY = window.scrollY;
+
+  // Seleccionar todas las imágenes con efecto parallax
+  const parallaxImages = document.querySelectorAll(".parallax-img");
+
+  function updateParallax() {
+    const scrollY = window.scrollY;
+
+    parallaxImages.forEach((img) => {
+      const speed = parseFloat(img.getAttribute("data-speed")) || 0.5;
+      const rect = img.getBoundingClientRect();
+      const imgTop = rect.top + scrollY;
+      const imgHeight = img.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      // Solo aplicar parallax si la imagen está visible en el viewport
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        // Calcular el desplazamiento basado en la posición de scroll
+        const yPos = (scrollY - imgTop) * speed;
+
+        // Aplicar transformación con límites para evitar desplazamientos excesivos
+        const maxMove = imgHeight * 0.15; // Máximo 15% de movimiento
+        const clampedYPos = Math.max(-maxMove, Math.min(maxMove, yPos));
+
+        img.style.transform = `translate3d(0, ${clampedYPos}px, 0)`;
+      }
+    });
+
+    ticking = false;
+  }
+
+  function requestTick() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }
+
+  // Escuchar el evento scroll con throttling
+  window.addEventListener("scroll", requestTick, { passive: true });
+
+  // Actualizar parallax al cargar la página
+  updateParallax();
+
+  // Actualizar parallax al redimensionar la ventana
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(updateParallax, 100);
+  });
+});
     </script>
   </body>
 </html>
