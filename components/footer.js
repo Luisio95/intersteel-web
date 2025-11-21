@@ -91,7 +91,14 @@ class FooterComponent extends HTMLElement {
 
             <!-- Copyright -->
             <div class="footer-bottom">
-              <p>2025© Woorx. All Right reserved</p>
+                <p>
+                    <a href="https://woorx.mx/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      style="color: inherit; text-decoration: none; cursor: pointer;">
+                        2025© Woorx. All Right reserved
+                    </a>
+                </p>
             </div>
           </div>
         </footer>

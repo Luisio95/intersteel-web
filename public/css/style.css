@@ -926,7 +926,7 @@ body.loaded #page-content {
   display: none; /* Oculto por defecto */
   background-color: #646464; /* Fondo gris oscuro */
   color: white;
-  padding: 15px 15px;
+  padding: 15px 35px;
   width: 100%;
 }
 

@@ -172,7 +172,7 @@
 
 .orange-box {
   background-color: var(--color-primary);
-  /* max-width: 800px; */
+  max-width: 600px;
   color: var(--color-white);
   padding: 40px 40px;
 }
@@ -235,6 +235,8 @@
   font-size: 1rem;
   line-height: 1.6;
   color: var(--color-text);
+  text-align: left;
+  text-align: justify;
 }
 
 .text-content .btn i {
@@ -256,8 +258,11 @@
 /* ============================================
    TIMELINE SECTION
    ============================================ */
+/* ============================================
+   TIMELINE SECTION
+   ============================================ */
 .timeline-section {
-  background-color: #f9f9f9;
+  background-color: white;
   overflow-x: hidden;
 }
 
@@ -266,11 +271,14 @@
   font-weight: 600;
 }
 
+/* ESCRITORIO: Scroll horizontal */
 .timeline-scroll {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   padding-bottom: 20px;
   display: flex;
+  cursor: grab;
 }
 
 .timeline-scroll::after {
@@ -311,7 +319,6 @@
   color: var(--color-dark);
   font-size: 15px;
   font-weight: 400;
-
 }
 
 .timeline-scroll::-webkit-scrollbar {
@@ -320,11 +327,115 @@
 
 .timeline-scroll::-webkit-scrollbar-track {
   background: #f1f1f1;
+  border-radius: 10px;
 }
 
 .timeline-scroll::-webkit-scrollbar-thumb {
   background: var(--color-primary);
   border-radius: 10px;
+}
+
+.timeline-scroll::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+
+/* MÓVIL: Scroll vertical */
+@media (max-width: 768px) {
+  .timeline-title {
+    display: block !important; /* Fuerza a que se muestre */
+    text-align: left;
+    margin-bottom: 30px;
+  }
+  
+  .timeline-scroll {
+    flex-direction: column; /* Cambia a vertical */
+    overflow-x: hidden; /* Oculta scroll horizontal */
+    overflow-y: auto; /* Activa scroll vertical */
+    max-height: 900px; /* Altura máxima para el scroll */
+    padding-bottom: 0;
+    gap: 30px; /* Espacio entre items */
+    cursor: default;
+  }
+  
+  /* Elimina el pseudo-elemento de la línea horizontal */
+  .timeline-scroll::after {
+    display: none;
+  }
+  
+  /* Elimina el indicador de scroll horizontal */
+  .timeline-scroll::before {
+    display: none;
+  }
+  
+  .timeline-item {
+    flex: 0 0 auto; /* Altura automática */
+    min-height: auto;
+    width: 100%;
+    padding: 20px;
+    border-left: 3px solid var(--color-primary);
+    margin-bottom: 0;
+  }
+  
+  .timeline-item .year {
+    border-left: none;
+    padding-left: 0;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-item h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-item p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  /* Scrollbar vertical personalizada */
+  .timeline-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: auto;
+  }
+  
+  .timeline-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  .timeline-scroll::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 10px;
+  }
+}
+
+/* Para tablets pequeñas */
+@media (max-width: 576px) {
+  .timeline-scroll {
+    max-height: 600px;
+  }
+  
+  .timeline-item {
+    padding: 15px;
+  }
+  
+  .timeline-item .year {
+    font-size: 24px;
+  }
+  
+  .timeline-item h5 {
+    font-size: 16px;
+  }
+  
+  .timeline-item p {
+    font-size: 13px;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 0.3; }
 }
 /* ============================================ 
    CONTADOR SECTION 
@@ -482,7 +593,7 @@
   }
   
   .contador-content {
-    padding: 20px 15px;
+    padding: 0px 15px;
   }
   
   .titulo-contador {
@@ -494,7 +605,7 @@
   }
   
   .contador-numero {
-    font-size: 70px;
+    font-size: 60px;
   }
   
   .contador-numero sup {
@@ -502,12 +613,14 @@
   }
   
   .contador-text {
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 0.5px;
   }
   
   .contador-wrapper {
     margin-bottom: 30px;
+    align-items: start!important;
+
   }
 }
 
@@ -610,6 +723,8 @@
 
 #service-image {
   transition: opacity 0.3s ease;
+  width: 35rem !important;
+  height: auto !important;
 }
 
 /* ============================================
@@ -703,13 +818,27 @@
   cursor: pointer;
 }
 
-.galeria-item:hover {
-  transform: translateY(-5px);
+.galeria-item2 {
+  flex: 0 0 400px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
+
+
 
 .galeria-item img {
   width: 100%;
-  height: 300px;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.galeria-item2 img {
+  width: 100%;
+  height: 650px;
   object-fit: cover;
   display: block;
 }
@@ -725,6 +854,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+   min-height: 100px;
 }
 
 .galeria-texto-izquierda {
@@ -1042,11 +1172,13 @@
 /* Tablets pequeñas (max-width: 992px) */
 @media (max-width: 992px) {
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 20px;
+    line-height: 160%;
+    font-weight: 400;
   }
 
   .hero-text {
-    max-width: 90%;
+    max-width: 80%;
   }
 
   .hero-contact {
@@ -1064,10 +1196,19 @@
     max-width: 100%;
     padding: 40px 25px;
     text-align: center;
+     text-align: left!important;
+    align-items: flex-start!important;
   }
 
   .orange-box-mobile {
     order: 2;
+    text-align: left!important;
+    align-items: flex-start!important;
+  }
+
+  .orange-box .btn {
+  align-self: flex-end; /* Botón a la derecha */
+  margin-left: auto; /* Empuja el botón a la derecha */
   }
 
   .about-intersteel .col-lg-6:nth-child(1) {
@@ -1111,9 +1252,17 @@
     min-height: 500px;
   }
 
+  .service-image {
+    width: 34px;
+    height: 34px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
   .hero-text p {
     font-size: 16px;
     width: auto;
+    align-content: justify;
   }
 
   .btn-cotizar {
@@ -1143,10 +1292,11 @@
     max-width: 100%;
   }
 
-  /* .imagen-grua {
-    width: 50%;
-    max-width: 250px;
-  } */
+  .imagen-grua {
+    width: 100%;
+    position: absolute;
+    top: 25%;
+  }
 
   .timeline-item {
     flex: 0 0 250px;
@@ -1205,7 +1355,7 @@
 }
 
 .construcciones-header {
-    max-width: 1400px;
+    max-width: 100%;
     /* margin: 0 auto 60px; */
     padding: 40px 0;
     position: relative;
@@ -1849,6 +1999,8 @@
 
 #service-image-proyecto {
   transition: opacity 0.3s ease;
+  width: 35rem !important;
+  height: auto !important;
 }
 
 /* ELEMENTOS DE SERVICIO */
