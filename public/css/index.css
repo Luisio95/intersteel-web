@@ -24,6 +24,14 @@
   overflow: hidden;
 }
 
+.hero-container2 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
 .hero-container img {
   width: 100%;
   height: 100%;
@@ -610,6 +618,13 @@
 
  .hero-container img {
     width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+ .hero-container2 img {
+    width: 10%;
     height: 100%;
     object-fit: cover;
     object-position: center;
