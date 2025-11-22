@@ -18,8 +18,8 @@ class GaleriaSliderComponent extends HTMLElement {
 
           <div class="galeria-container">
             <div class="galeria-scroll">
-              <div class="galeria-item">
-                <img src="public/img/galeria/galeria-1.jpg" alt="Proyecto 1" />
+              <div class="galeria-item" style="width: 100%; height: 300px; object-fit: cover;">
+                <img src="public/img/galeria/galeria-1.jpg" alt="Proyecto 1" style="width: 100%; height: 300px; object-fit: cover;" />
                 <div class="galeria-info">
                   <div class="galeria-texto-izquierda">
                     <h3>Bodega SJL</h3>
@@ -31,8 +31,8 @@ class GaleriaSliderComponent extends HTMLElement {
                 </div>
               </div>
 
-              <div class="galeria-item">
-                <img src="public/img/galeria/galeria-2.jpg" alt="Proyecto 2" />
+              <div class="galeria-item" style="width: 100%; height: 300px; object-fit: cover;">
+                <img src="public/img/galeria/galeria-2.jpg" alt="Proyecto 2" style="width: 100%; height: 300px; object-fit: cover;" />
                 <div class="galeria-info">
                   <div class="galeria-texto-izquierda">
                     <h3>Almacén CA</h3>
@@ -44,8 +44,8 @@ class GaleriaSliderComponent extends HTMLElement {
                 </div>
               </div>
 
-              <div class="galeria-item">
-                <img src="public/img/galeria/galeria-3.jpg" alt="Proyecto 3" />
+              <div class="galeria-item" style="width: 100%; height: 300px; object-fit: cover;">
+                <img src="public/img/galeria/galeria-3.jpg" alt="Proyecto 3" style="width: 100%; height: 300px; object-fit: cover;" />
                 <div class="galeria-info">
                   <div class="galeria-texto-izquierda">
                     <h3>Bodega 4950</h3>
@@ -57,8 +57,8 @@ class GaleriaSliderComponent extends HTMLElement {
                 </div>
               </div>
 
-              <div class="galeria-item">
-                <img src="public/img/galeria/galeria-4.jpg" alt="Proyecto 4" />
+              <div class="galeria-item" style="width: 100%; height: 300px; object-fit: cover;">
+                <img src="public/img/galeria/galeria-4.jpg" alt="Proyecto 4" style="width: 100%; height: 300px; object-fit: cover;" />
                 <div class="galeria-info">
                   <div class="galeria-texto-izquierda">
                     <h3>Nave Tepezala</h3>
@@ -70,8 +70,8 @@ class GaleriaSliderComponent extends HTMLElement {
                 </div>
               </div>
 
-              <div class="galeria-item">
-                <img src="public/img/galeria/galeria-5.jpg" alt="Proyecto 5" />
+              <div class="galeria-item" style="width: 100%; height: 300px; object-fit: cover;">
+                <img src="public/img/galeria/galeria-5.jpg" alt="Proyecto 5" style="width: 100%; height: 300px; object-fit: cover;" />
                 <div class="galeria-info">
                   <div class="galeria-texto-izquierda">
                     <h3>Nave Tepezala</h3>
@@ -82,8 +82,8 @@ class GaleriaSliderComponent extends HTMLElement {
                   </div>
                 </div>
               </div>
-              <div class="galeria-item">
-                <img src="public/img/galeria/galeria-6.jpg" alt="Proyecto 5" />
+              <div class="galeria-item" style="width: 100%; height: 300px; object-fit: cover;">
+                <img src="public/img/galeria/galeria-6.jpg" alt="Proyecto 5" style="width: 100%; height: 300px; object-fit: cover;" />
                 <div class="galeria-info">
                   <div class="galeria-texto-izquierda">
                     <h3>Plaza de la Industria 499</h3>
@@ -94,8 +94,8 @@ class GaleriaSliderComponent extends HTMLElement {
                   </div>
                 </div>
               </div>
-              <div class="galeria-item">
-                <img src="public/img/galeria/galeria-7.jpg" alt="Proyecto 5" />
+              <div class="galeria-item" style="width: 100%; height: 300px; object-fit: cover;">
+                <img src="public/img/galeria/galeria-7.jpg" alt="Proyecto 5" style="width: 100%; height: 300px; object-fit: cover;" />
                 <div class="galeria-info">
                   <div class="galeria-texto-izquierda">
                     <h3>Plaza de la Industria 499</h3>
@@ -106,8 +106,8 @@ class GaleriaSliderComponent extends HTMLElement {
                   </div>
                 </div>
               </div>
-              <div class="galeria-item">
-                <img src="public/img/galeria/galeria-8.jpg" alt="Proyecto 5" />
+              <div class="galeria-item" style="width: 100%; height: 300px; object-fit: cover;">
+                <img src="public/img/galeria/galeria-8.jpg" alt="Proyecto 5" style="width: 100%; height: 300px; object-fit: cover;" />
                 <div class="galeria-info">
                   <div class="galeria-texto-izquierda">
                     <h3>Nave Realito</h3>
@@ -118,8 +118,8 @@ class GaleriaSliderComponent extends HTMLElement {
                   </div>
                 </div>
               </div>
-              <div class="galeria-item">
-                <img src="public/img/galeria/galeria-9.jpg" alt="Proyecto 5" />
+              <div class="galeria-item" style="width: 100%; height: 300px; object-fit: cover;">
+                <img src="public/img/galeria/galeria-9.jpg" alt="Proyecto 5" style="width: 100%; height: 300px; object-fit: cover;" />
                 <div class="galeria-info">
                   <div class="galeria-texto-izquierda">
                     <h3>Plaza de la Industria 499</h3>
@@ -130,8 +130,8 @@ class GaleriaSliderComponent extends HTMLElement {
                   </div>
                 </div>
               </div>
-              <div class="galeria-item">
-                <img src="public/img/galeria/galeria-10.jpg" alt="Proyecto 5" />
+              <div class="galeria-item" style="width: 100%; height: 300px; object-fit: cover;">
+                <img src="public/img/galeria/galeria-10.jpg" alt="Proyecto 5" style="width: 100%; height: 300px; object-fit: cover;" />
                 <div class="galeria-info">
                   <div class="galeria-texto-izquierda">
                     <h3>Nave Tepezala</h3>
@@ -142,8 +142,8 @@ class GaleriaSliderComponent extends HTMLElement {
                   </div>
                 </div>
               </div>
-              <div class="galeria-item">
-                <img src="public/img/galeria/galeria-11.jpg" alt="Proyecto 5" />
+              <div class="galeria-item" style="width: 100%; height: 300px; object-fit: cover;">
+                <img src="public/img/galeria/galeria-11.jpg" alt="Proyecto 5" style="width: 100%; height: 300px; object-fit: cover;" />
                 <div class="galeria-info">
                   <div class="galeria-texto-izquierda">
                     <h3>Bodega SJL</h3>
@@ -154,8 +154,8 @@ class GaleriaSliderComponent extends HTMLElement {
                   </div>
                 </div>
               </div>
-              <div class="galeria-item">
-                <img src="public/img/galeria/galeria-12.jpg" alt="Proyecto 5" />
+              <div class="galeria-item" style="width: 100%; height: 300px; object-fit: cover;">
+                <img src="public/img/galeria/galeria-12.jpg" alt="Proyecto 5" style="width: 100%; height: 300px; object-fit: cover;" />
                 <div class="galeria-info">
                   <div class="galeria-texto-izquierda">
                     <h3>Nave Pyme</h3>

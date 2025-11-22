@@ -67,6 +67,7 @@
   font-weight: 400;
   font-size: 15px;
   letter-spacing: -5%;
+  text-align: justify;
 }
 
 .hero-text .highlight {
@@ -187,7 +188,7 @@
 .orange-box p {
   font-size: 16px;
   font-weight: 600;
-  line-height: 1.6;
+  line-height: 1.9;
   color: var(--color-white) !important;
 }
 
@@ -584,6 +585,49 @@
   .contador-wrapper {
     margin-bottom: 40px;
   }
+
+  .galeria-titulo {
+    font-size: 20px!important;
+   }
+
+   .galeria-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+    max-width: 100%!important;
+    margin: 0 auto;
+}
+
+.galeria-info h3, .galeria-texto-izquierda h3 {
+  font-size: 15px!important;
+}
+
+.galeria-texto-derecha span {
+  font-size: 19px!important;
+ }
+
+ .hero-container img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cities-box .title .text-orange {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 30px!important;
+}
+
+.cities-box .title {
+  font-size: 30px!important;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
 }
 
 /* Móviles pequeños (hasta 480px) */
@@ -620,8 +664,48 @@
   .contador-wrapper {
     margin-bottom: 30px;
     align-items: start!important;
-
   }
+  .galeria-titulo {
+    font-size: 20px!important;
+   }
+
+   .galeria-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+    max-width: 100%!important;
+    margin: 0 auto;
+}
+
+.galeria-info h3, .galeria-texto-izquierda h3 {
+  font-size: 15px!important;
+}
+
+.galeria-texto-derecha span {
+  font-size: 10px!important;
+ }
+
+ .hero-container img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cities-box .title .text-orange {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 30px!important;
+}
+
+.cities-box .title {
+  font-size: 30px!important;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-white);
+}
 }
 
 /* ============================================
@@ -644,7 +728,7 @@
 }
 
 .cities-box .title {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 400;
   line-height: 1.2;
   color: var(--color-white);
@@ -657,7 +741,7 @@
 .cities-box .title .text-orange {
   color: var(--color-primary);
   font-weight: 600;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .cities-list {
@@ -696,6 +780,24 @@
 .cities-list::-webkit-scrollbar-thumb {
   background-color: var(--color-primary);
   border-radius: 10px;
+}
+
+.state-group {
+  margin-bottom: 15px;
+}
+
+.state-title {
+  color: var(--color-primary); /* Amarillo */
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 5px 0;
+}
+
+.list-unstyled {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 8px;
 }
 
 .cities-box .btn {
@@ -827,6 +929,20 @@
   cursor: pointer;
 }
 
+.galeria-itemIndex {
+  flex: 0 0 400px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.galeria-itemIndex img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 
 .galeria-item img {
@@ -1234,15 +1350,22 @@
   }
 
   .cities-list {
-    max-height: 200px;
+    /* max-height: 200px; */
+    padding: 0px 15px 0px 0px;
   }
 
   .cities-box {
-    text-align: center;
+    text-align: left;
+    font-size: 20px;
+    padding: 70px 20px !important;
   }
 
   .cities-box .title br {
     display: none;
+  }
+
+  .cities-list ul li p {
+    text-align: left;
   }
 }
 
@@ -1327,6 +1450,12 @@
   .footer-content {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+
+  .cities-list {
+    /* max-height: 200px; */
+    padding: 0px 15px 0px 0px;
+    text-align: left;
   }
 }
 
@@ -1539,7 +1668,7 @@
     }
 
     .construcciones-header {
-        margin-bottom: 40px;
+        /* margin-bottom: 40px; */
     }
 
     .texto-animado span {
@@ -1563,8 +1692,10 @@
     }
 
     .construccion-item {
-        flex: 0 0 85%;
+        flex: 0 0 100%;
         scroll-snap-align: center;
+                border: solid 1px #CDCDCD;
+        padding: 10px;
     }
 
     .construccion-item:last-child {
@@ -1585,7 +1716,9 @@
 
 @media (max-width: 576px) {
     .construccion-item {
-        flex: 0 0 90%;
+        flex: 0 0 100%;
+                border: solid 1px #CDCDCD;
+        padding: 10px;
     }
 
     .construccion-imagen {
@@ -1852,7 +1985,7 @@
   font-size: 6rem;
   font-weight: 800;
   color: rgba(0, 0, 0, 0.05);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   pointer-events: none;
   width: 100%;
 }
