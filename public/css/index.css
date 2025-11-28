@@ -723,6 +723,27 @@
 }
 }
 
+/* Para pantallas extra grandes */
+        @media (min-width: 1400px) {
+            .cities-box {
+                padding: 5rem 3rem;
+            }
+            
+            .service-title {
+                font-size: 1.5rem;
+            }
+            
+            .cities-list p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (min-width: 1800px) {
+            .cities-box {
+                max-width: 1600px;
+            }
+        }
+
 /* ============================================
    PROJECTS MAP SECTION
    ============================================ */
@@ -810,7 +831,7 @@
 }
 
 .list-unstyled {
-  display: grid;
+  /* display: grid; */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 8px;
 }

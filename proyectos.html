@@ -848,41 +848,96 @@
         });
       });
 
-      document.addEventListener("DOMContentLoaded", function () {
-        const serviceTitlesProyecto = document.querySelectorAll(
-          ".service-title-proyecto"
-        );
-        const serviceImageProyecto = document.getElementById(
-          "service-image-proyecto"
-        );
+// ===================================
+// CAMBIO DE IMAGEN CON SCROLL Y CLIC
+// ===================================
 
-        // Activar el primer servicio por defecto
-        if (serviceTitlesProyecto.length > 0) {
-          serviceTitlesProyecto[0].classList.add("active");
+document.addEventListener("DOMContentLoaded", function () {
+  const serviceTitles = document.querySelectorAll(".service-title-proyecto");
+  const serviceImage = document.getElementById("service-image-proyecto");
+  
+  let isChangingImage = false;
+  let currentActiveTitle = null;
+
+  // Función para cambiar la imagen con efecto fade
+  function changeImage(newImageSrc, titleElement) {
+    if (isChangingImage) return;
+    
+    isChangingImage = true;
+    
+    // Remover clase active de todos los títulos
+    serviceTitles.forEach((t) => t.classList.remove("active"));
+    
+    // Agregar clase active al título actual
+    titleElement.classList.add("active");
+    currentActiveTitle = titleElement;
+
+    // Cambiar la imagen con efecto fade
+    serviceImage.style.opacity = "0";
+
+    setTimeout(() => {
+      serviceImage.src = newImageSrc;
+      serviceImage.style.opacity = "1";
+      isChangingImage = false;
+    }, 300);
+  }
+
+  // ===================================
+  // FUNCIONALIDAD DE CLIC (Original)
+  // ===================================
+  serviceTitles.forEach((title) => {
+    title.addEventListener("click", function () {
+      const newImage = this.getAttribute("data-image");
+      changeImage(newImage, this);
+    });
+  });
+
+  // ===================================
+  // FUNCIONALIDAD DE SCROLL (Nueva)
+  // ===================================
+  
+  // Configuración del Intersection Observer para los títulos
+  const observerOptions = {
+    root: null,
+    rootMargin: "-40% 0px -40% 0px", // Se activa cuando el título está cerca del centro
+    threshold: 0
+  };
+
+  const titleObserverCallback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const title = entry.target;
+        const newImage = title.getAttribute("data-image");
+        
+        // Solo cambiar si no es el título activo actual
+        if (currentActiveTitle !== title) {
+          changeImage(newImage, title);
         }
+      }
+    });
+  };
 
-        serviceTitlesProyecto.forEach((title) => {
-          title.addEventListener("click", function () {
-            // Remover la clase active de todos los títulos
-            serviceTitlesProyecto.forEach((t) => t.classList.remove("active"));
+  // Crear el observer para los títulos
+  const titleObserver = new IntersectionObserver(
+    titleObserverCallback,
+    observerOptions
+  );
 
-            // Agregar la clase active al título clickeado
-            this.classList.add("active");
+  // Observar cada título de servicio
+  serviceTitles.forEach((title) => {
+    titleObserver.observe(title);
+  });
 
-            // Obtener la ruta de la imagen del atributo data-image
-            const newImage = this.getAttribute("data-image");
-
-            // Cambiar la imagen con efecto de fade
-            serviceImageProyecto.style.opacity = "0";
-
-            setTimeout(() => {
-              serviceImageProyecto.src = newImage;
-              serviceImageProyecto.style.opacity = "1";
-            }, 300);
-          });
-        });
-      });
-
+  // Activar el primer servicio por defecto al cargar
+  if (serviceTitles.length > 0) {
+    setTimeout(() => {
+      changeImage(
+        serviceTitles[0].getAttribute("data-image"),
+        serviceTitles[0]
+      );
+    }, 100);
+  }
+});
       // ===================================
 // EFECTO PARALLAX EN SCROLL
 // ===================================

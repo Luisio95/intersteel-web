@@ -181,12 +181,16 @@
         <header-component></header-component>
 
         <!-- Hero Section con animación -->
-        <div class="hero-container section-animate slide-in-left parallax-container">
+        <div
+          class="hero-container section-animate slide-in-left parallax-container"
+        >
           <!-- Imagen de fondo -->
           <img
             src="public/img/estructuras/estructuras.png"
             alt="Intersteel Background"
-            class="parallax-img" data-speed="0.3" />
+            class="parallax-img"
+            data-speed="0.3"
+          />
 
           <!-- Overlay oscuro -->
           <div class="hero-overlay"></div>
@@ -232,7 +236,9 @@
         <section class="about-intersteel container-fluid px-0 section-animate">
           <div class="row g-0">
             <!-- Columna izquierda -->
-            <div class="col-12 col-lg-6 position-relative order-1 order-lg-1 parallax-container">
+            <div
+              class="col-12 col-lg-6 position-relative order-1 order-lg-1 parallax-container"
+            >
               <!-- Cuadro anaranjado (solo visible en desktop) -->
               <div
                 class="orange-box position-absolute top-50 end-0 translate-middle-y d-none d-lg-block animate-item"
@@ -329,8 +335,7 @@
                 src="public/img/estructuras/grua-est.png"
                 alt="Nave industrial"
                 class="img-fluid w-100 h-100 object-fit-cover parallax-img parallax-slow"
-                        data-speed="0.2"
-
+                data-speed="0.2"
               />
             </div>
           </div>
@@ -642,94 +647,153 @@
         }
       });
 
-      document.addEventListener("DOMContentLoaded", function () {
-        const serviceTitles = document.querySelectorAll(".service-title");
-        const serviceImage = document.getElementById("service-image");
-
-        // Activar el primer servicio por defecto
-        if (serviceTitles.length > 0) {
-          serviceTitles[0].classList.add("active");
-        }
-
-        serviceTitles.forEach((title) => {
-          title.addEventListener("click", function () {
-            // Remover la clase active de todos los títulos
-            serviceTitles.forEach((t) => t.classList.remove("active"));
-
-            // Agregar la clase active al título clickeado
-            this.classList.add("active");
-
-            // Obtener la ruta de la imagen del atributo data-image
-            const newImage = this.getAttribute("data-image");
-
-            // Cambiar la imagen con efecto de fade
-            serviceImage.style.opacity = "0";
-
-            setTimeout(() => {
-              serviceImage.src = newImage;
-              serviceImage.style.opacity = "1";
-            }, 300);
-          });
-        });
-      });
-
-      // ===================================
-// EFECTO PARALLAX EN SCROLL
+// ===================================
+// CAMBIO DE IMAGEN CON SCROLL Y CLIC
 // ===================================
 
 document.addEventListener("DOMContentLoaded", function () {
-  let ticking = false;
-  let lastScrollY = window.scrollY;
+  const serviceTitles = document.querySelectorAll(".service-title");
+  const serviceImage = document.getElementById("service-image");
+  
+  let isChangingImage = false;
+  let currentActiveTitle = null;
 
-  // Seleccionar todas las imágenes con efecto parallax
-  const parallaxImages = document.querySelectorAll(".parallax-img");
+  // Función para cambiar la imagen con efecto fade
+  function changeImage(newImageSrc, titleElement) {
+    if (isChangingImage) return;
+    
+    isChangingImage = true;
+    
+    // Remover clase active de todos los títulos
+    serviceTitles.forEach((t) => t.classList.remove("active"));
+    
+    // Agregar clase active al título actual
+    titleElement.classList.add("active");
+    currentActiveTitle = titleElement;
 
-  function updateParallax() {
-    const scrollY = window.scrollY;
+    // Cambiar la imagen con efecto fade
+    serviceImage.style.opacity = "0";
 
-    parallaxImages.forEach((img) => {
-      const speed = parseFloat(img.getAttribute("data-speed")) || 0.5;
-      const rect = img.getBoundingClientRect();
-      const imgTop = rect.top + scrollY;
-      const imgHeight = img.offsetHeight;
-      const windowHeight = window.innerHeight;
+    setTimeout(() => {
+      serviceImage.src = newImageSrc;
+      serviceImage.style.opacity = "1";
+      isChangingImage = false;
+    }, 300);
+  }
 
-      // Solo aplicar parallax si la imagen está visible en el viewport
-      if (rect.top < windowHeight && rect.bottom > 0) {
-        // Calcular el desplazamiento basado en la posición de scroll
-        const yPos = (scrollY - imgTop) * speed;
+  // ===================================
+  // FUNCIONALIDAD DE CLIC (Original)
+  // ===================================
+  serviceTitles.forEach((title) => {
+    title.addEventListener("click", function () {
+      const newImage = this.getAttribute("data-image");
+      changeImage(newImage, this);
+    });
+  });
 
-        // Aplicar transformación con límites para evitar desplazamientos excesivos
-        const maxMove = imgHeight * 0.15; // Máximo 15% de movimiento
-        const clampedYPos = Math.max(-maxMove, Math.min(maxMove, yPos));
+  // ===================================
+  // FUNCIONALIDAD DE SCROLL (Nueva)
+  // ===================================
+  
+  // Configuración del Intersection Observer para los títulos
+  const observerOptions = {
+    root: null,
+    rootMargin: "-40% 0px -40% 0px", // Se activa cuando el título está cerca del centro
+    threshold: 0
+  };
 
-        img.style.transform = `translate3d(0, ${clampedYPos}px, 0)`;
+  const titleObserverCallback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const title = entry.target;
+        const newImage = title.getAttribute("data-image");
+        
+        // Solo cambiar si no es el título activo actual
+        if (currentActiveTitle !== title) {
+          changeImage(newImage, title);
+        }
       }
     });
+  };
 
-    ticking = false;
-  }
+  // Crear el observer para los títulos
+  const titleObserver = new IntersectionObserver(
+    titleObserverCallback,
+    observerOptions
+  );
 
-  function requestTick() {
-    if (!ticking) {
-      window.requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
-  }
-
-  // Escuchar el evento scroll con throttling
-  window.addEventListener("scroll", requestTick, { passive: true });
-
-  // Actualizar parallax al cargar la página
-  updateParallax();
-
-  // Actualizar parallax al redimensionar la ventana
-  let resizeTimeout;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(updateParallax, 100);
+  // Observar cada título de servicio
+  serviceTitles.forEach((title) => {
+    titleObserver.observe(title);
   });
+
+  // Activar el primer servicio por defecto al cargar
+  if (serviceTitles.length > 0) {
+    setTimeout(() => {
+      changeImage(
+        serviceTitles[0].getAttribute("data-image"),
+        serviceTitles[0]
+      );
+    }, 100);
+  }
 });
+      // ===================================
+      // EFECTO PARALLAX EN SCROLL
+      // ===================================
+
+      document.addEventListener("DOMContentLoaded", function () {
+        let ticking = false;
+        let lastScrollY = window.scrollY;
+
+        // Seleccionar todas las imágenes con efecto parallax
+        const parallaxImages = document.querySelectorAll(".parallax-img");
+
+        function updateParallax() {
+          const scrollY = window.scrollY;
+
+          parallaxImages.forEach((img) => {
+            const speed = parseFloat(img.getAttribute("data-speed")) || 0.5;
+            const rect = img.getBoundingClientRect();
+            const imgTop = rect.top + scrollY;
+            const imgHeight = img.offsetHeight;
+            const windowHeight = window.innerHeight;
+
+            // Solo aplicar parallax si la imagen está visible en el viewport
+            if (rect.top < windowHeight && rect.bottom > 0) {
+              // Calcular el desplazamiento basado en la posición de scroll
+              const yPos = (scrollY - imgTop) * speed;
+
+              // Aplicar transformación con límites para evitar desplazamientos excesivos
+              const maxMove = imgHeight * 0.15; // Máximo 15% de movimiento
+              const clampedYPos = Math.max(-maxMove, Math.min(maxMove, yPos));
+
+              img.style.transform = `translate3d(0, ${clampedYPos}px, 0)`;
+            }
+          });
+
+          ticking = false;
+        }
+
+        function requestTick() {
+          if (!ticking) {
+            window.requestAnimationFrame(updateParallax);
+            ticking = true;
+          }
+        }
+
+        // Escuchar el evento scroll con throttling
+        window.addEventListener("scroll", requestTick, { passive: true });
+
+        // Actualizar parallax al cargar la página
+        updateParallax();
+
+        // Actualizar parallax al redimensionar la ventana
+        let resizeTimeout;
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(updateParallax, 100);
+        });
+      });
     </script>
   </body>
 </html>
