@@ -17,7 +17,7 @@ class GaleriaSliderComponent extends HTMLElement {
           </div>
 
           <div class="galeria-container">
-            <div class="galeria-scroll">
+            <div class="galeria-scroll timeline-scroll">
               <div class="galeria-item" style="width: 100%; height: 300px; object-fit: cover;">
                 <img src="public/img/galeria/galeria-1.jpg" alt="Proyecto 1" style="width: 100%; height: 300px; object-fit: cover;" />
                 <div class="galeria-info">
