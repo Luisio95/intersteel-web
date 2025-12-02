@@ -267,9 +267,6 @@
 /* ============================================
    TIMELINE SECTION
    ============================================ */
-/* ============================================
-   TIMELINE SECTION
-   ============================================ */
 .timeline-section {
   background-color: white;
   overflow-x: hidden;
@@ -446,6 +443,118 @@
   0%, 100% { opacity: 0.7; }
   50% { opacity: 0.3; }
 }
+
+/* ===================================
+   SCROLLBAR PERSONALIZADO VISIBLE
+   (Compatible con iOS, macOS, Safari)
+   ================================== */
+
+/* Ocultar scrollbar nativo en todos los navegadores */
+.timeline-scroll {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE y Edge */
+}
+
+.timeline-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Contenedor del scrollbar personalizado */
+.custom-scrollbar-container {
+  width: 100%;
+  height: 12px;
+  margin-top: 15px;
+  position: relative;
+  display: block;
+}
+
+/* Track del scrollbar */
+.custom-scrollbar-track {
+  width: 100%;
+  height: 8px;
+  background: #f1f1f1;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Thumb del scrollbar */
+.custom-scrollbar-thumb {
+  position: absolute;
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 10px;
+  cursor: grab;
+  transition: background 0.2s ease;
+  min-width: 40px; /* Ancho mínimo para que sea fácil de agarrar */
+}
+
+.custom-scrollbar-thumb:hover {
+  background: #c55a3a; /* Color más oscuro al hover */
+}
+
+.custom-scrollbar-thumb:active {
+  cursor: grabbing;
+  background: #b04d2f; /* Color aún más oscuro al arrastrar */
+}
+
+/* Indicador visual de que se puede arrastrar */
+.timeline-scroll {
+  cursor: grab;
+  user-select: none;
+}
+
+.timeline-scroll:active {
+  cursor: grabbing;
+}
+
+/* Ajustes para móvil - Ocultar scrollbar personalizado */
+@media (max-width: 768px) {
+  .custom-scrollbar-container {
+    display: none !important;
+  }
+  
+  /* Restaurar scrollbar nativo en móvil (vertical) */
+  .timeline-scroll {
+    scrollbar-width: thin;
+    -ms-overflow-style: auto;
+  }
+  
+  .timeline-scroll::-webkit-scrollbar {
+    display: block;
+    width: 6px;
+  }
+  
+  .timeline-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  .timeline-scroll::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 10px;
+  }
+}
+
+/* Animación suave para el scrollbar */
+.custom-scrollbar-thumb {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efecto de brillo al pasar el mouse por el track */
+.custom-scrollbar-track:hover {
+  background: #e8e8e8;
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 576px) {
+  .custom-scrollbar-container {
+    display: none !important;
+  }
+}
+
 /* ============================================ 
    CONTADOR SECTION 
    ============================================ */ 
