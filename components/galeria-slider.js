@@ -6,7 +6,7 @@ class GaleriaSliderComponent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
 <section class="galeria-section">
-          <div class="galeria-header">
+          <div class="galeria-header mx-5">
             <h2 class="galeria-titulo">Portafolio/<span>Galería</span></h2>
             <a
               href="portafolio.html"
