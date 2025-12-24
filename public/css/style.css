@@ -915,6 +915,28 @@ body.loaded #page-content {
   color: white;
 }
 
+/* Hover fuerte y notorio */
+.panel-item:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.panel-item:hover img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 12px 20px rgba(0,0,0,0.3));
+}
+
+.panel-arrow a {
+  font-size: 2.5rem;
+  color: #333;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.panel-arrow a:hover {
+  transform: translateX(10px) scale(1.15);
+}
+
+
 @media (max-width: 768px) {
   .right-panel {
     display: none !important;

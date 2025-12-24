@@ -57,17 +57,14 @@ class FooterComponent extends HTMLElement {
               <div class="footer-column">
                 <h4>Síguenos</h4>
                 <div class="social-icons">
-                  <a href="#" class="social-icon">
+                  <a href="https://www.facebook.com/share/16j4s9T9j5/?mibextid=wwXIfr" class="social-icon" target="_blank" rel="noopener noreferrer">
                     <img src="./public/img/home/fb.png" alt="Facebook" />
                   </a>
-                  <a href="#" class="social-icon">
+                  <a href="https://www.instagram.com/intersteelmx?igsh=MTQ2aTBwems2dWc5NA%3D%3D&utm_source=qr" class="social-icon" target="_blank" rel="noopener noreferrer">
                     <img src="./public/img/home/in.png" alt="LinkedIn" />
                   </a>
                   <a href="#" class="social-icon">
                     <img src="./public/img/home/ins.png" alt="Instagram" />
-                  </a>
-                  <a href="#" class="social-icon">
-                    <img src="./public/img/home/ig.png" alt="X" />
                   </a>
                 </div>
 
@@ -84,9 +81,10 @@ class FooterComponent extends HTMLElement {
               </div>
 
               <!-- Logo -->
-              <div class="footer-logo">
+              <div class="footer-logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
                 <img src="public/img/home/logo-footer.png" alt="Intersteel" />
               </div>
+
             </div>
 
             <!-- Copyright -->
