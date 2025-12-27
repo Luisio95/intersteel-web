@@ -172,105 +172,17 @@
       }
     </script>
 
-    <!-- Estilos para animaciones INTERSTEEL – ESTILO FERRO.PT -->
+    <!-- ESTILOS SIMPLIFICADOS SIN ANIMACIONES -->
     <style>
-      /* === ANIMACIONES INTERSTEEL – ESTILO FERRO.PT === */
-
-      /* SECCIONES PRINCIPALES */
-      .section-animate {
-        opacity: 0;
-        transform: translateY(80px);
-        filter: blur(6px);
-        transition:
-          opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-          transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-          filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .section-animate.visible {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-      }
-
-      /* VARIANTES */
-      .section-animate.slide-in-left {
-        transform: translateX(-80px);
-      }
-      .section-animate.slide-in-right {
-        transform: translateX(80px);
-      }
-      .section-animate.scale-in {
-        transform: scale(0.92);
-      }
-      .section-animate.slide-up {
-        transform: translateY(100px);
-      }
-
-      .section-animate.slide-in-left.visible,
-      .section-animate.slide-in-right.visible,
-      .section-animate.scale-in.visible,
-      .section-animate.slide-up.visible {
-        transform: translate(0) scale(1);
-        opacity: 1;
-        filter: blur(0);
-      }
-
-      /* ELEMENTOS INTERNOS */
-      .animate-item {
-        opacity: 0;
-        transform: translateY(50px);
-        filter: blur(5px);
-        transition:
-          opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
-          transform 1s cubic-bezier(0.25, 1, 0.5, 1),
-          filter 1s cubic-bezier(0.25, 1, 0.5, 1);
-      }
-      .animate-item.visible {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-      }
-
-      /* ELEMENTOS ESCALONADOS (stagger) */
-      .stagger-item {
-        opacity: 0;
-        transform: translateY(40px);
-        filter: blur(4px);
-        transition:
-          opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-          transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-          filter 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-      }
-      .stagger-item.visible {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-      }
-
-      /* ELEMENTOS DE SERVICIO */
-      .service-item {
-        opacity: 0;
-        transform: translateY(60px);
-        filter: blur(6px);
-        transition:
-          opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
-          transform 1s cubic-bezier(0.25, 1, 0.5, 1),
-          filter 1s cubic-bezier(0.25, 1, 0.5, 1);
-      }
-      .service-item.visible {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-      }
-
+      /* ESTILOS BÁSICOS SIN EFECTOS DE ANIMACIÓN */
+      
       /* BOTONES */
       .btn-animate {
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: all 0.3s ease;
       }
       .btn-animate:hover {
-        transform: translateY(-4px) scale(1.03);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       }
 
       /* IMÁGENES */
@@ -278,31 +190,10 @@
         overflow: hidden;
       }
       .img-animate img {
-        transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: transform 0.5s ease;
       }
       .img-animate:hover img {
-        transform: scale(1.07);
-      }
-
-
-
-
-
-      /* HERO ANIMATIONS */
-      .hero-contact {
-        opacity: 0;
-        transform: translateY(-30px);
-        filter: blur(4px);
-        transition:
-          opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s,
-          transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s,
-          filter 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
-      }
-
-      .hero-contact.visible {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
+        transform: scale(1.05);
       }
 
       /* LIGHTBOX STYLES */
@@ -374,7 +265,7 @@
       .lightbox-counter {
         position: absolute;
         top: 20px;
-        left: 20px;
+        left: 45px;
         color: white;
         font-size: 1rem;
       }
@@ -394,24 +285,62 @@
       .lightbox-overlay.active .lightbox-info {
         transform: translateY(0);
       }
+      
+      /* ESTILOS PARA LA GALERÍA */
+      .galeria-item, .galeria-item2 {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .galeria-item img, .galeria-item2 img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        display: block;
+      }
+      
+      .galeria-item2 img {
+        height: 600px;
+      }
+      
+      .galeria-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /* background: linear-gradient(transparent, rgba(0,0,0,0.8)); */
+        color: white;
+        padding: 20px;
+      }
+      
+      .galeria-texto-izquierda h5 {
+        color: #e86b44 !important;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      
+      .galeria-texto-derecha small {
+        color: #ccc;
+        font-size: 0.9rem;
+      }
     </style>
   </head>
   <body>
     <!-- Contenedor para transiciones -->
     <div id="page-container">
-      <!-- Contenido principal con animación -->
+      <!-- Contenido principal -->
       <main id="page-content">
         <!-- Header Component -->
         <header-component-white></header-component-white>
 
         
-        <!-- Hero Section con animación -->
-        <div class="hero-container2 hero-portafolio section-animate slide-up" style="background-color: white;">
+        <!-- Hero Section -->
+        <div class="hero-container2 hero-portafolio" style="background-color: white;">
           <!-- Overlay oscuro -->
           <div class="hero-overlay"></div>
 
-          <!-- Contacto WhatsApp con animación -->
-          <div class="hero-contact hero-portafolio-contact animate-item">
+          <!-- Contacto WhatsApp -->
+          <div class="hero-contact hero-portafolio-contact">
             <p class="contact-label" style="color: #000;">
               Chatea con nosotros<br />
               Por WhatsApp
@@ -428,8 +357,8 @@
           </div>
         </div>
 
-        <!-- Galería Section con animaciones -->
-        <section class="galeria-section section-animate scale-in" style="padding: 0%">
+        <!-- Galería Section -->
+        <section class="galeria-section" style="padding: 0%">
           <div class="container-fluid">
             <div class="row" style="padding: 0%">
               <!-- Imagen 1 -->
@@ -755,12 +684,12 @@
                   </div>
                 </div>
               </div>
-<!-- Imagen 1 -->
+              <!-- Imagen 13 -->
               <div class="col-12 col-md-6" style="padding: 0%">
                 <div class="galeria-item position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-13.jpeg"
-                    alt="Proyecto 1"
+                    alt="Proyecto 13"
                     class="img-fluid w-100"
                   />
                   <div
@@ -782,12 +711,12 @@
                 </div>
               </div>
 
-              <!-- Imagen 2 -->
+              <!-- Imagen 14 -->
               <div class="col-12 col-md-6" style="padding: 0%">
                 <div class="galeria-item position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-14.JPG"
-                    alt="Proyecto 2"
+                    alt="Proyecto 14"
                     class="img-fluid w-100"
                   />
                   <div
@@ -809,12 +738,12 @@
                 </div>
               </div>
 
-              <!-- Imagen 3 -->
+              <!-- Imagen 15 -->
               <div class="col-12 col-md-4" style="padding: 0%">
                 <div class="galeria-item2 position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-15.jpeg"
-                    alt="Proyecto 3"
+                    alt="Proyecto 15"
                     class="img-fluid w-100"
                   />
                   <div
@@ -836,12 +765,12 @@
                 </div>
               </div>
 
-              <!-- Imagen 4 -->
+              <!-- Imagen 16 -->
               <div class="col-12 col-md-4" style="padding: 0%">
                 <div class="galeria-item2 position-relative img-animate">
                   <img
                     src="public/img/galeria/galeria-16.jpeg"
-                    alt="Proyecto 4"
+                    alt="Proyecto 16"
                     class="img-fluid w-100"
                   />
                   <div
@@ -863,12 +792,12 @@
                 </div>
               </div>
 
-              <!-- Imagen 5 -->
+              <!-- Imagen 17 -->
               <div class="col-12 col-md-4" style="padding: 0%">
                 <div class="galeria-item2 position-relative img-animate">
                   <img
-                    src="public/img/galeria/galeria-17.JPG"
-                    alt="Proyecto 5"
+                    src="public/img/galeria/galeria-17.jpg"
+                    alt="Proyecto 17"
                     class="img-fluid w-100"
                   />
                   <div
@@ -885,6 +814,87 @@
                     </div>
                     <div class="galeria-texto-derecha text-end">
                       <small>Tulum, Quintana Roo</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 18 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-18.jpg"
+                    alt="Proyecto 18"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Almacén CA
+                      </h5>
+                      <small>Bodega industrial</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Tulum, Quintana Roo</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 19 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-19.jpg"
+                    alt="Proyecto 19"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Almacén CA
+                      </h5>
+                      <small>Bodega industrial</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Tulum, Quintana Roo</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 20 -->
+              <div class="col-12 col-md-12" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-20.jpg"
+                    alt="Proyecto 6"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Lakeside, Icepark
+                      </h5>
+                      <small>estructura Metalica</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Juriquilla, Querétaro</small>
                     </div>
                   </div>
                 </div>
@@ -894,7 +904,7 @@
               <div class="col-12 col-md-6" style="padding: 0%">
                 <div class="galeria-item position-relative img-animate">
                   <img
-                    src="public/img/galeria/galeria-18.JPG"
+                    src="public/img/galeria/galeria-21.jpg"
                     alt="Proyecto 1"
                     class="img-fluid w-100"
                   />
@@ -906,12 +916,12 @@
                         class="mb-0 fw-semibold"
                         style="color: var(--color-primary)"
                       >
-                        Almacén CA
+                        Lakeside, Icepark
                       </h5>
-                      <small>Bodega industrial</small>
+                      <small>Estructura Metalica</small>
                     </div>
                     <div class="galeria-texto-derecha text-end">
-                      <small>Tulum, Quintana Roo</small>
+                      <small>Juriquilla, Querétaro</small>
                     </div>
                   </div>
                 </div>
@@ -921,7 +931,7 @@
               <div class="col-12 col-md-6" style="padding: 0%">
                 <div class="galeria-item position-relative img-animate">
                   <img
-                    src="public/img/galeria/galeria-19.JPG"
+                    src="public/img/galeria/galeria-22.jpeg"
                     alt="Proyecto 2"
                     class="img-fluid w-100"
                   />
@@ -933,12 +943,12 @@
                         class="mb-0 fw-semibold"
                         style="color: var(--color-primary)"
                       >
-                        Almacén CA
+                        Lakeside, Icepark
                       </h5>
-                      <small>Bodega industrial</small>
+                      <small>Estructura Metalica</small>
                     </div>
                     <div class="galeria-texto-derecha text-end">
-                      <small>Tulum, Quintana Roo</small>
+                      <small>Juriquilla, Querétaro</small>
                     </div>
                   </div>
                 </div>
@@ -948,7 +958,7 @@
               <div class="col-12 col-md-4" style="padding: 0%">
                 <div class="galeria-item2 position-relative img-animate">
                   <img
-                    src="public/img/galeria/galeria-20.JPG"
+                    src="public/img/galeria/galeria-23.jpeg"
                     alt="Proyecto 3"
                     class="img-fluid w-100"
                   />
@@ -960,12 +970,12 @@
                         class="mb-0 fw-semibold"
                         style="color: var(--color-primary)"
                       >
-                        Almacén CA
+                        Lakeside, Icepark
                       </h5>
-                      <small>Bodega industrial</small>
+                      <small>Estructura Metalica</small>
                     </div>
                     <div class="galeria-texto-derecha text-end">
-                      <small>Tulum, Quintana Roo</small>
+                      <small>Juriquilla, Querétaro</small>
                     </div>
                   </div>
                 </div>
@@ -975,7 +985,7 @@
               <div class="col-12 col-md-4" style="padding: 0%">
                 <div class="galeria-item2 position-relative img-animate">
                   <img
-                    src="public/img/galeria/galeria-21.JPG"
+                    src="public/img/galeria/galeria-24.jpeg"
                     alt="Proyecto 4"
                     class="img-fluid w-100"
                   />
@@ -1002,7 +1012,7 @@
               <div class="col-12 col-md-4" style="padding: 0%">
                 <div class="galeria-item2 position-relative img-animate">
                   <img
-                    src="public/img/galeria/galeria-22.JPG"
+                    src="public/img/galeria/galeria-25.jpeg"
                     alt="Proyecto 5"
                     class="img-fluid w-100"
                   />
@@ -1014,19 +1024,1043 @@
                         class="mb-0 fw-semibold"
                         style="color: var(--color-primary)"
                       >
-                        Lakeside, Icepark
+                        Nave - Pyme
+                      </h5>
+                      <small>Nave Industrial</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Querétaro, Querétaro</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 6 -->
+              <div class="col-12 col-md-12" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-26.jpg"
+                    alt="Proyecto 6"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Nave - Pyme
+                      </h5>
+                      <small>Nave Industrial</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Querétaro, Querétaro</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 7 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-27.jpg"
+                    alt="Proyecto 7"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Nave - Pyme
+                      </h5>
+                      <small>Nave Industrial</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Querétaro, Querétaro</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 8 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-28.jpg"
+                    alt="Proyecto 8"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Nave - Pyme
+                      </h5>
+                      <small>Nave Industrial</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Querétaro, Querétaro</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 9 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-29.jpeg"
+                    alt="Proyecto 9"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Nave - Pyme
+                      </h5>
+                      <small>Nave Industrial</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Querétaro, Querétaro</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 10 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-30.jpeg"
+                    alt="Proyecto 10"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Nave - Pyme
+                      </h5>
+                      <small>Nave Industrial</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Querétaro, Querétaro</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 11 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-31.jpeg"
+                    alt="Proyecto 11"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Plaza de la Industria 499
+                      </h5>
+                      <small>Complejo Industrial Mixto</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>San Luis Potosi, SLP</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 12 -->
+              <div class="col-12 col-md-12" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-32.jpg"
+                    alt="Proyecto 12"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Plaza de la Industria 499
+                      </h5>
+                      <small>Complejo Industrial Mixto</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>San Luis Potosi, SLP</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Imagen 13 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-33.jpeg"
+                    alt="Proyecto 13"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Plaza de la Industria 499
+                      </h5>
+                      <small>Complejo Industrial Mixto</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>San Luis Potosi, SLP</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 14 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-34.jpeg"
+                    alt="Proyecto 14"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Plaza de la Industria 499
+                      </h5>
+                      <small>Complejo Industrial Mixto</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>San Luis Potosi, SLP</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 15 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-35.jpeg"
+                    alt="Proyecto 15"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Estructura - Bahia
                       </h5>
                       <small>Estructura Metalica</small>
                     </div>
                     <div class="galeria-texto-derecha text-end">
-                      <small>Juriquilla, Querétaro</small>
+                      <small>Vallarta, Jalisco</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 16 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-36.jpeg"
+                    alt="Proyecto 16"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Estructura - Bahia
+                      </h5>
+                      <small>Estructura Metalica</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Vallarta, Jalisco</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 17 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-37.jpg"
+                    alt="Proyecto 17"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Estructura - Bahia
+                      </h5>
+                      <small>Estructura Metalica</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Vallarta, Jalisco</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 18 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-38.jpg"
+                    alt="Proyecto 18"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Estructura - Bahia
+                      </h5>
+                      <small>Estructura Metalica</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Vallarta, Jalisco</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 19 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-39.jpeg"
+                    alt="Proyecto 19"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Nave - Realito
+                      </h5>
+                      <small>Nave Industrial</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Morelia, Michoacán</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 20 -->
+              <div class="col-12 col-md-12" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-40.jpeg"
+                    alt="Proyecto 6"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Nave - Realito
+                      </h5>
+                      <small>Nave Industrial</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Morelia, Michoacán</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Imagen 1 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-41.jpeg"
+                    alt="Proyecto 1"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Nave - Realito
+                      </h5>
+                      <small>Nave Industrial</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Morelia, Michoacán</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 2 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-42.jpg"
+                    alt="Proyecto 2"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Bodega 4950
+                      </h5>
+                      <small>Bodega Industrial</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Querétaro, Querétaro</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 3 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-43.jpg"
+                    alt="Proyecto 3"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        Bodega 4950
+                      </h5>
+                      <small>Bodega Industrial</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Querétaro, Querétaro</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 4 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-44.jpg"
+                    alt="Proyecto 4"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - Punta Mayor
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>León, Guanajuato</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 5 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-45.jpg"
+                    alt="Proyecto 5"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - Punta Mayor
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>León, Guanajuato</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 6 -->
+              <div class="col-12 col-md-12" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-46.jpg"
+                    alt="Proyecto 6"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - Punta Mayor
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>León, Guanajuato</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 7 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-47.jpg"
+                    alt="Proyecto 7"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - Punta Mayor
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>León, Guanajuato</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 8 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-48.jpg"
+                    alt="Proyecto 8"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - Punta Mayor
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>León, Guanajuato</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 9 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-49.jpg"
+                    alt="Proyecto 9"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - Punta Mayor
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>León, Guanajuato</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 10 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-50.jpg"
+                    alt="Proyecto 10"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - Punta Mayor
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>León, Guanajuato</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 11 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-51.jpg"
+                    alt="Proyecto 11"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - Punta Mayor
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>León, Guanajuato</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 12 -->
+              <div class="col-12 col-md-12" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-52.jpg"
+                    alt="Proyecto 12"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - Punta Mayor
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>León, Guanajuato</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Imagen 13 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-53.jpg"
+                    alt="Proyecto 13"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - Punta Mayor
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>León, Guanajuato</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 14 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-54.jpg"
+                    alt="Proyecto 14"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - T1
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Cancún, Quintana Roo</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 15 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-55.jpg"
+                    alt="Proyecto 15"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - T1
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Cancún, Quintana Roo</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 16 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-56.jpg"
+                    alt="Proyecto 16"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - T1
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Cancún, Quintana Roo</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 17 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-57.jpg"
+                    alt="Proyecto 17"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - T1
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Cancún, Quintana Roo</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 18 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-58.jpg"
+                    alt="Proyecto 18"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - T1
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Cancún, Quintana Roo</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 19 -->
+              <div class="col-12 col-md-6" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-59.jpg"
+                    alt="Proyecto 19"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - T1
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Cancún, Quintana Roo</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 20 -->
+              <div class="col-12 col-md-12" style="padding: 0%">
+                <div class="galeria-item position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-60.jpg"
+                    alt="Proyecto 6"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - T1
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Cancún, Quintana Roo</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 20 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-61.jpg"
+                    alt="Proyecto 6"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - T1
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Cancún, Quintana Roo</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Imagen 1 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-62.jpg"
+                    alt="Proyecto 1"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - T1
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Cancún, Quintana Roo</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Imagen 2 -->
+              <div class="col-12 col-md-4" style="padding: 0%">
+                <div class="galeria-item2 position-relative img-animate">
+                  <img
+                    src="public/img/galeria/galeria-63.jpg"
+                    alt="Proyecto 2"
+                    class="img-fluid w-100"
+                  />
+                  <div
+                    class="galeria-info d-flex justify-content-between align-items-end p-3"
+                  >
+                    <div class="galeria-texto-izquierda">
+                      <h5
+                        class="mb-0 fw-semibold"
+                        style="color: var(--color-primary)"
+                      >
+                        DESM - T1
+                      </h5>
+                      <small>Desmantelamiento</small>
+                    </div>
+                    <div class="galeria-texto-derecha text-end">
+                      <small>Cancún, Quintana Roo</small>
                     </div>
                   </div>
                 </div>
               </div>
 
               
- 
+
               
             </div>
           </div>
@@ -1157,108 +2191,7 @@
       });
 
       // ===================================
-      // SISTEMA DE ANIMACIONES INTERSTEEL
-      // ===================================
-
-      document.addEventListener('DOMContentLoaded', function() {
-        // Configuración del Intersection Observer
-        const observerOptions = {
-          root: null,
-          rootMargin: '0px 0px -10% 0px',
-          threshold: 0.1
-        };
-
-        // Función para animar elementos con delay escalonado
-        function animateStaggerItems(container, delay = 100) {
-          const items = container.querySelectorAll('.stagger-item');
-          items.forEach((item, index) => {
-            setTimeout(() => {
-              item.classList.add('visible');
-            }, index * delay);
-          });
-        }
-
-        // Función para animar galería con delay escalonado
-        function animateGalleryItems(container, delay = 150) {
-          const items = container.querySelectorAll('.galeria-item');
-          const items2 = container.querySelectorAll('.galeria-item2');
-          items.forEach((item, index) => {
-            setTimeout(() => {
-              item.classList.add('visible');
-            }, index * delay);
-          });
-          items2.forEach((item, index) => {
-            setTimeout(() => {
-              item.classList.add('visible');
-            }, index * delay);
-          });
-        }
-
-        // Función callback para el observer
-        const observerCallback = (entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              // Animar la sección principal
-              entry.target.classList.add('visible');
-              
-              // Animar elementos individuales dentro de la sección
-              const animateItems = entry.target.querySelectorAll('.animate-item');
-              animateItems.forEach((item, index) => {
-                setTimeout(() => {
-                  item.classList.add('visible');
-                }, index * 100);
-              });
-
-              // Animaciones específicas por tipo de sección
-              if (entry.target.classList.contains('galeria-section')) {
-                animateGalleryItems(entry.target, 120);
-              }
-              
-              if (entry.target.classList.contains('service-section')) {
-                animateStaggerItems(entry.target, 150);
-              }
-
-              // Dejar de observar después de animar
-              observer.unobserve(entry.target);
-            }
-          });
-        };
-
-        // Crear el observer
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-        // Observar todas las secciones con animación
-        const animatedSections = document.querySelectorAll('.section-animate');
-        animatedSections.forEach(section => {
-          observer.observe(section);
-        });
-
-        // Observar elementos individuales fuera de secciones
-        const individualAnimatedItems = document.querySelectorAll('.animate-item:not(.section-animate .animate-item)');
-        individualAnimatedItems.forEach(item => {
-          observer.observe(item);
-        });
-
-        // Animar elementos del hero inmediatamente
-        const heroContact = document.querySelector('.hero-contact');
-        if (heroContact) {
-          setTimeout(() => {
-            heroContact.classList.add('visible');
-          }, 800);
-        }
-
-        // Animar header después de la transición de página
-        setTimeout(() => {
-          const header = document.querySelector('header-component');
-          if (header) {
-            header.style.opacity = '1';
-            header.style.transform = 'translateY(0)';
-          }
-        }, 600);
-      });
-
-      // ===================================
-      // LIGHTBOX / IMAGE PREVIEW
+      // LIGHTBOX / IMAGE PREVIEW (SIMPLIFICADO)
       // ===================================
 
       document.addEventListener('DOMContentLoaded', function() {
@@ -1344,7 +2277,7 @@
             // Evitar que se abra si se hace click en un enlace
             if (e.target.tagName === 'A') return;
             
-            currentIndex = galeriaItems.length + index; // Ajustar índice para el segundo conjunto
+            currentIndex = galeriaItems.length + index;
             openLightbox();
           });
         });
@@ -1445,6 +2378,50 @@
             prevImage();
           }
         }
+        
+        // ===================================
+        // VERIFICACIÓN DE IMÁGENES
+        // ===================================
+        
+        console.log('Verificando carga de imágenes...');
+        
+        // Verificar que todas las imágenes se carguen
+        const allImages = document.querySelectorAll('.galeria-item img, .galeria-item2 img');
+        let loadedCount = 0;
+        let errorCount = 0;
+        
+        allImages.forEach((img, index) => {
+          img.onload = function() {
+            loadedCount++;
+            console.log(`✓ Imagen cargada: ${img.src}`);
+            checkAllImagesLoaded();
+          };
+          
+          img.onerror = function() {
+            errorCount++;
+            console.error(`✗ Error cargando imagen: ${img.src}`);
+            checkAllImagesLoaded();
+          };
+        });
+        
+        function checkAllImagesLoaded() {
+          if (loadedCount + errorCount === allImages.length) {
+            console.log(`=== RESUMEN ===`);
+            console.log(`Total imágenes: ${allImages.length}`);
+            console.log(`Cargadas: ${loadedCount}`);
+            console.log(`Con error: ${errorCount}`);
+            
+            if (errorCount > 0) {
+              // Mostrar alerta solo en desarrollo
+              if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                alert(`⚠️ ${errorCount} imágenes no se pudieron cargar. Revisa la consola para más detalles.`);
+              }
+            }
+          }
+        }
+        
+        // Forzar verificación después de 3 segundos
+        setTimeout(checkAllImagesLoaded, 3000);
       });
     </script>
   </body>
