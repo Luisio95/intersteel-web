@@ -60,10 +60,10 @@ class FooterComponent extends HTMLElement {
                   <a href="https://www.facebook.com/share/16j4s9T9j5/?mibextid=wwXIfr" class="social-icon" target="_blank" rel="noopener noreferrer">
                     <img src="./public/img/home/fb.png" alt="Facebook" />
                   </a>
-                  <a href="https://www.instagram.com/intersteelmx?igsh=MTQ2aTBwems2dWc5NA%3D%3D&utm_source=qr" class="social-icon" target="_blank" rel="noopener noreferrer">
+                  <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer">
                     <img src="./public/img/home/in.png" alt="LinkedIn" />
                   </a>
-                  <a href="#" class="social-icon">
+                  <a href="https://www.instagram.com/intersteelmx?igsh=MTQ2aTBwems2dWc5NA%3D%3D&utm_source=qr" class="social-icon">
                     <img src="./public/img/home/ins.png" alt="Instagram" />
                   </a>
                 </div>
