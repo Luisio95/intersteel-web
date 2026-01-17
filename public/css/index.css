@@ -818,6 +818,14 @@
     object-position: center;
 }
 
+ .hero-container .proyectos{
+    width: inherit;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
 .cities-box .title .text-orange {
   color: var(--color-primary);
   font-weight: 600;
